@@ -56,7 +56,6 @@ export function Hero() {
                     alt=""
                     initials={a.initials}
                     size={36}
-                    priority
                     wrapperClassName={`relative grid size-9 place-items-center rounded-full text-[#FFD9C3] max-md:size-8 ${i === 0 ? "ml-0" : "-ml-2.5"}`}
                     imageClassName="block size-9 rounded-full border-2 border-white/68 bg-[#E9E0ED] object-cover text-transparent shadow-[0_7px_16px_rgba(30,18,36,.16)] [grid-area:1/1]"
                     fallbackClassName="grid size-9 place-items-center rounded-full border-2 border-[rgba(99,74,114,.55)] bg-[#F3E8F7] text-[10px] font-bold text-purple shadow-[0_8px_18px_rgba(30,18,36,.18)] [grid-area:1/1] max-md:size-8"
