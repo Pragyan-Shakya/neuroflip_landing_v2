@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+reference
+public/__ref.html
+Dockerfile
+.dockerignore
+*.md
+.env*

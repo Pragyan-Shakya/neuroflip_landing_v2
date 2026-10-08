@@ -63,7 +63,7 @@ export function Testimonials() {
                   alt={t.name}
                   initials={t.initials}
                   size={52}
-                  wrapperClassName="inline-flex size-13 flex-none place-items-center items-center rounded-full text-[10px] font-bold text-[#F3EAF8]"
+                  wrapperClassName="inline-flex size-13 min-h-0 flex-none place-items-center items-center rounded-full text-[10px] font-bold text-[#F3EAF8]"
                   imageClassName="block size-13 rounded-full border-2 border-white/32 bg-white/10 object-cover [grid-area:1/1]"
                   fallbackClassName="grid size-13 place-items-center rounded-full border-2 border-white/24 bg-white/10 text-[12px] font-bold text-white [grid-area:1/1]"
                 />
