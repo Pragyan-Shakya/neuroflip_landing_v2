@@ -1,0 +1,2563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#634A72">
+<title>Neuroflip — Know what to revise first for Medical PG</title>
+<meta name="description" content="Neuroflip uses past NEET-PG, INI-CET and FMGE questions to rank 1,619 Medical PG topics and turn them into clear revision milestones.">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#634A72; --purple-deep:#4D3959; --purple-ink:#2F2734;
+  --orange:#EB814E; --peach:#F7986A; --peach-soft:#FFE2C8;
+  --lav:#EEDFF6; --lav-2:#D5C2E3; --warm:#FFF5EB;
+  --ink:#1B1B1B; --text:#2F2734; --muted:#625D65; --quiet:#807A82;
+  --line:#D9D9D9; --soft:#F2F1F4; --subtle:#F8F8F8; --white:#FFFFFF;
+  --success:#27AE60; --blue:#4E66EC;
+  --max:1200px; --gutter:28px;
+  --shadow:0 1px 2px rgba(16,24,40,.05);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--purple)}
+body{margin:0;font-family:Manrope,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--purple);-webkit-font-smoothing:antialiased;line-height:1.5}
+
+body,button,a{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+a{color:inherit} button{font:inherit}
+img{display:block;max-width:100%}
+.wrap{width:min(calc(100% - 2*var(--gutter)),var(--max));margin-inline:auto}
+.skip{position:absolute;left:-9999px;top:8px;z-index:1000;background:#fff;color:var(--purple-ink);padding:10px 14px;border-radius:8px;font-weight:700}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--peach-soft);outline-offset:3px}
+
+/* top */
+.top{background:var(--purple);color:white;position:relative;overflow:hidden}
+.top::before{content:none}
+.nav{position:sticky;top:0;z-index:30;background:var(--purple);backdrop-filter:none;-webkit-backdrop-filter:none;transition:background-color .22s ease,box-shadow .22s ease}
+.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:700;letter-spacing:-.03em;font-size:18px;color:white}
+.brand img{width:28px;height:36px;object-fit:contain}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:700;color:rgba(255,255,255,.86)}
+.nav-links a{text-decoration:none;transition:color .18s ease}
+.nav-links a:hover{color:white}
+.nav-action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:44px;background:var(--orange);color:var(--purple-ink)!important;font-weight:700}
+.menu{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:white;align-items:center;justify-content:center}
+.menu svg{width:20px;height:20px}
+
+.hero{position:relative;z-index:2;padding:92px 0 104px}
+.hero-grid{display:block}
+.hero-copy{max-width:980px;margin:0 auto;text-align:center;position:relative}
+.hero-copy::after{content:"";position:absolute;left:50%;bottom:-54px;width:72px;height:4px;background:var(--orange);border-radius:4px;transform:translateX(-50%)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:12px;line-height:1;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#F4D8C7}
+.eyebrow::before{content:"";width:28px;height:3px;background:var(--orange);border-radius:3px}
+h1,h2,h3,p{margin-top:0}
+h1{max-width:980px;margin:24px auto 26px;font-size:clamp(44px,6.2vw,82px);line-height:.95;letter-spacing:-.06em;text-wrap:balance}
+h1 .warm{color:#FFD9C4}
+.hero-exam-rotator{display:inline-block;min-width:7.4ch;text-align:center;color:#FFD9C4;transition:opacity .18s ease,transform .18s ease;will-change:opacity,transform}
+.hero-exam-rotator.is-changing{opacity:0;transform:translateY(.12em)}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.hero-lead{max-width:700px;margin:0 auto;font-size:18px;line-height:1.65;color:rgba(255,255,255,.82);text-wrap:pretty}
+.hero-lead strong{color:white}
+.hero-actions{display:flex;justify-content:center;gap:12px;align-items:center;flex-wrap:wrap;margin:32px 0 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;padding:0 23px;border-radius:44px;border:1px solid transparent;text-decoration:none;font-weight:700;font-size:15px;transition:transform .18s ease,background-color .18s ease,border-color .18s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--orange);color:var(--purple-ink);border-color:var(--orange)}
+.btn-primary:hover{background:#F19466}
+.btn-ghost{background:transparent;color:white;border-color:rgba(255,255,255,.30)}
+.btn-ghost:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.48)}
+.hero-proof{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;color:rgba(255,255,255,.64);font-size:13px}
+.hero-proof strong{color:white}
+.proof-dot{width:4px;height:4px;background:#BBA7C6;border-radius:50%}
+
+.evidence-board{position:relative;min-height:548px}
+.board-shell{position:relative;background:#fff;border:1px solid rgba(255,255,255,.20);border-radius:16px;padding:22px;color:var(--ink);box-shadow:0 22px 60px rgba(25,13,30,.17)}
+.board-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.board-head strong{display:block;font-size:18px;letter-spacing:-.02em;color:var(--purple-ink)}
+.board-head span{display:block;font-size:12px;color:var(--quiet);margin-top:4px}
+.exam-switch{display:flex;gap:6px;padding:4px;background:var(--soft);border-radius:44px}
+.exam-switch button{min-height:34px;border:0;border-radius:44px;padding:0 11px;background:transparent;color:var(--muted);font-size:11px;font-weight:700;cursor:pointer}
+.exam-switch button[aria-selected="true"]{background:var(--purple);color:white}
+.path{padding:24px 0 4px}
+.path-row{display:grid;grid-template-columns:72px 1fr 88px;gap:14px;align-items:center;padding:12px 0}
+.path-kicker{font-size:11px;font-weight:700;color:var(--quiet);text-transform:uppercase;letter-spacing:.06em}
+.path-track{height:12px;background:var(--soft);border-radius:20px;overflow:hidden;position:relative}
+.path-fill{height:100%;width:var(--fill);background:var(--purple);border-radius:20px;transform-origin:left;animation:grow .85s ease both}
+.path-row:first-child .path-fill{background:var(--orange)}
+.path-row:last-child .path-fill{background:var(--success)}
+.path-value{text-align:right}
+.path-value strong{font-size:18px;color:var(--purple-ink);font-variant-numeric:tabular-nums}
+.path-value small{display:block;font-size:10px;color:var(--quiet)}
+.board-disclosure{margin-top:18px;padding:12px 14px;background:var(--warm);border-left:4px solid var(--orange);border-radius:8px;font-size:12px;color:#5E5350}
+.board-orbit{position:absolute;right:-28px;bottom:-44px;width:168px;background:var(--peach-soft);border:1px solid #F3B99B;border-radius:12px;padding:16px;color:var(--purple-ink);box-shadow:var(--shadow)}
+.board-orbit b{display:block;font-size:26px;letter-spacing:-.04em}
+.board-orbit span{font-size:11px;color:#715E57}
+.logo-card{position:absolute;left:-30px;top:-42px;width:92px;height:110px;background:#fff;border:1px solid var(--line);border-radius:16px;display:grid;place-items:center;box-shadow:var(--shadow)}
+.logo-card img{width:50px;height:64px;object-fit:contain}
+
+/* metric rail */
+.metrics{border-bottom:0;background:transparent}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.metric{padding:26px 28px;border-right:1px solid var(--line)} .metric:last-child{border-right:0}
+.metric strong{display:block;font-size:28px;line-height:1.2;letter-spacing:-.035em;color:white;font-variant-numeric:tabular-nums}
+.metric span{display:block;margin-top:6px;font-size:12px;color:rgba(255,255,255,.72)}
+
+/* common */
+.section{padding:96px 0}
+.section.alt{background:transparent;border-block:0}
+.section-head{display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;align-items:end;margin-bottom:42px}
+.kicker{display:inline-flex;gap:9px;align-items:center;color:#F4EAF8;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.10em}
+.kicker::before{content:"";width:25px;height:3px;background:var(--orange);border-radius:3px}
+h2{margin:14px 0 0;font-size:clamp(32px,4vw,50px);line-height:1.06;letter-spacing:-.045em;color:white;text-wrap:balance}
+.section-head p{margin:0;font-size:16px;line-height:1.7;color:rgba(255,255,255,.78);max-width:680px;text-wrap:pretty}
+
+
+/* compact hero download actions */
+.hero-store-row{display:flex;justify-content:center;gap:10px;align-items:center;flex-wrap:wrap;margin-top:30px}
+.hero-store{min-height:56px;display:flex;align-items:center;gap:11px;padding:0 17px;border:1px solid rgba(255,255,255,.62);background:rgba(255,255,255,.98);color:var(--purple-ink);border-radius:12px;text-decoration:none;transition:transform .18s ease,background-color .18s ease,border-color .18s ease,box-shadow .18s ease;box-shadow:0 10px 24px rgba(39,24,47,.12)}
+.hero-store:hover{transform:translateY(-2px);background:#FFF7F1;border-color:#F1D2BC;box-shadow:0 12px 28px rgba(39,24,47,.16)}
+.hero-store svg{width:24px;height:24px;flex:0 0 auto}
+.hero-store small{display:block;font-size:9px;line-height:1.05;color:#7A727F;letter-spacing:.01em}
+.hero-store strong{display:block;font-size:13px;line-height:1.15;margin-top:3px}
+.hero-download-label{margin-top:12px;color:rgba(255,255,255,.56);font-size:11px;font-weight:600;letter-spacing:.01em}
+.hero-social-proof{margin-top:16px;display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;color:rgba(255,255,255,.88);font-size:15px;font-weight:700;line-height:1.35;text-align:center}
+.hero-social-proof > div > span{color:#FFD9C3}.proof-avatars{display:flex;align-items:center;padding-left:10px}.proof-avatar{position:relative;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;margin-left:-10px}.proof-avatar:first-child{margin-left:0}.proof-avatar img,.proof-avatar b{width:36px;height:36px;border-radius:50%;border:2px solid rgba(99,74,114,.55);box-shadow:0 8px 18px rgba(30,18,36,.18)}.proof-avatar img{display:block;object-fit:cover;background:#D9CFDF;color:transparent}.proof-avatar b{display:grid;place-items:center;background:#F3E8F7;color:var(--purple);font-size:10px;font-weight:700}.proof-avatar b[hidden]{display:none!important}
+
+/* milestone terrain */
+.terrain{background:linear-gradient(180deg,rgba(255,255,255,.97) 0%,rgba(250,247,252,.95) 100%);border:1px solid rgba(255,255,255,.54);border-radius:20px;overflow:hidden;box-shadow:0 28px 60px rgba(34,20,40,.10),inset 0 1px 0 rgba(255,255,255,.72);backdrop-filter:none}
+.terrain-top{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 24px 18px;border-bottom:1px solid #E8E1EA;background:linear-gradient(180deg,rgba(247,242,249,.76),rgba(255,255,255,.88))}
+.terrain-title strong{display:block;font-size:16px;line-height:1.2;color:var(--purple-ink);letter-spacing:-.02em}
+.terrain-title span{display:block;margin-top:4px;font-size:11px;color:var(--quiet)}
+.terrain-grid{display:grid;grid-template-columns:minmax(0,1.64fr) minmax(300px,.56fr);min-height:450px}
+.curve-area{min-width:0;padding:24px 24px 28px;border-right:1px solid #EBE2E5;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(249,245,251,.15))}
+.axis-label{display:flex;justify-content:space-between;gap:20px;color:var(--quiet);font-size:11px;margin-bottom:16px}.axis-label[hidden]{display:none!important}
+.curve{display:flex;flex-direction:column;gap:10px;padding:2px 0}
+.bar-col{position:relative;min-width:0;display:grid;grid-template-columns:74px minmax(0,1fr) auto;align-items:center;gap:14px;padding:11px 12px;border-radius:16px;border:1px solid rgba(233,225,236,.55);background:rgba(255,255,255,.56);cursor:pointer;transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+.bar-col::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:4px;border-radius:999px;background:transparent;transition:background-color .18s ease}
+.bar-col:hover{background:#fff;border-color:#E9D8CF;box-shadow:0 10px 20px rgba(34,20,40,.06)}
+.bar-col[aria-pressed="true"]{background:#fff;border-color:#E9D8CF;box-shadow:0 14px 28px rgba(34,20,40,.10);transform:translateX(3px)}
+.bar-col[aria-pressed="true"]::before{background:linear-gradient(180deg,#EB814E,#C672E1)}
+.bar-label{display:flex;flex-direction:column;gap:4px;align-items:flex-start;text-align:left;white-space:nowrap}
+.bar-label strong{display:block;font-size:18px;line-height:1;color:var(--purple-ink);font-weight:700}
+.bar-label span{font-size:11px;color:var(--quiet);font-weight:700}
+.bar-col.midway .bar-label span{color:#B95B32}
+.bar-col.midway::after{content:"Midway";position:absolute;right:78px;top:50%;transform:translateY(-50%);font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B95B32;background:#FFF1E8;border:1px solid #F3C7AF;border-radius:999px;padding:4px 7px;pointer-events:none}
+.bar-track{position:relative;height:30px;border-radius:999px;background:linear-gradient(180deg,#F5F0F7,#F1EDF4);border:1px solid #E7E3E8;overflow:hidden;box-shadow:inset 0 1px 1px rgba(255,255,255,.8)}
+.bar{display:block;height:100%;width:var(--pct);background:linear-gradient(90deg,#EDE4F4 0%,#D9C5E9 100%);border:1px solid #D6C5E3;border-radius:999px;position:relative;transition:width .3s ease,background-color .25s ease,border-color .25s ease;box-shadow:inset 0 1px 0 rgba(255,255,255,.48)}
+.bar::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,0));pointer-events:none}
+.bar.first{background:linear-gradient(90deg,#F7DCC8 0%,#F1C5A4 100%);border-color:#F0B69A}
+.bar.mid{background:linear-gradient(90deg,#F9B58D 0%,#F08A58 100%);border-color:#E97A49;box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
+.bar.fourth{background:linear-gradient(90deg,#E2D2EF 0%,#D1BCE5 100%);border-color:var(--lav-2)}
+.bar.last{background:linear-gradient(90deg,#DDF3E5 0%,#C9E9D6 100%);border-color:#BEE5CB}
+.bar-value{font-size:28px;line-height:1;letter-spacing:-.04em;color:var(--purple-ink);font-weight:700;font-variant-numeric:tabular-nums;min-width:56px;text-align:right}
+.terrain-side{min-width:0;padding:30px 28px;display:flex;flex-direction:column;justify-content:space-between;gap:22px;background:linear-gradient(180deg,#FAF0E7 0%,#F8EFE6 58%,#FFF8F2 100%)}
+.side-big{font-size:56px;line-height:.9;letter-spacing:-.06em;color:var(--purple);font-weight:700}
+.terrain-side h3{font-size:24px;line-height:1.14;letter-spacing:-.03em;color:var(--purple-ink);margin:12px 0 10px}
+.terrain-side p{font-size:13px;line-height:1.72;color:#665C58;margin:0}
+.side-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.side-chip{padding:12px 12px 11px;border-radius:14px;background:rgba(255,255,255,.64);border:1px solid rgba(235,205,187,.84);box-shadow:inset 0 1px 0 rgba(255,255,255,.75)}
+.side-chip strong{display:block;font-size:22px;line-height:1;color:var(--purple-ink);letter-spacing:-.03em}
+.side-chip span{display:block;margin-top:6px;font-size:10px;line-height:1.35;color:#7A655D;font-weight:700}
+.side-rule{padding-top:16px;border-top:1px solid #EBCDBB;font-size:11px;line-height:1.55;color:#725E55}
+.side-actions{display:flex;flex-direction:column;gap:10px;padding-top:2px}
+.side-cta{min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:0 16px;border-radius:999px;background:linear-gradient(180deg,#F18D57,#EB814E);color:var(--purple-ink);font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 12px 20px rgba(235,129,78,.24);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+.side-cta:hover{transform:translateY(-1px);box-shadow:0 14px 24px rgba(235,129,78,.28);filter:saturate(1.02)}
+.side-note{font-size:11px;line-height:1.5;color:#856F65;text-align:center}
+.terrain-badge{min-height:40px;display:inline-flex;align-items:center;justify-content:center;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.88);border:1px solid rgba(232,225,234,.86);box-shadow:0 6px 14px rgba(34,20,40,.04);color:var(--purple);font-size:12px;font-weight:700;white-space:nowrap}
+
+/* PYT evidence pipeline — three-card scan pattern */
+.pyt-pipeline{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  overflow:visible;
+}
+.pyt-stage{
+  position:relative;
+  min-width:0;
+  min-height:286px;
+  padding:26px 26px 22px;
+  display:flex;
+  flex-direction:column;
+  color:var(--purple-ink);
+  border:1px solid rgba(255,255,255,.34);
+  border-radius:16px;
+  background:rgba(255,255,255,.93);
+  box-shadow:0 12px 30px rgba(34,20,40,.06);
+}
+.pyt-stage:nth-child(1){background:rgba(255,247,241,.95)}
+.pyt-stage:nth-child(3){background:rgba(248,244,250,.95)}
+.pyt-stage:not(:last-child)::after{
+  content:"→";
+  position:absolute;
+  z-index:3;
+  right:-25px;
+  top:50%;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  transform:translateY(-50%);
+  background:var(--purple);
+  color:white;
+  border:4px solid #6A507D;
+  font-size:14px;
+  font-weight:700;
+}
+.pyt-step{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  min-height:28px;
+  margin-bottom:22px;
+  padding:0 10px;
+  border-radius:44px;
+  background:rgba(99,74,114,.08);
+  color:var(--purple);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.pyt-stage:first-child .pyt-step{background:rgba(235,129,78,.10);color:#A94E24}
+.pyt-metric{
+  font-size:48px;
+  line-height:.94;
+  letter-spacing:-.05em;
+  font-weight:700;
+  color:var(--purple);
+  font-variant-numeric:tabular-nums;
+  margin-bottom:12px;
+}
+.pyt-stage:first-child .pyt-metric{color:var(--orange)}
+.pyt-stage h3{
+  font-size:21px;
+  line-height:1.18;
+  letter-spacing:-.03em;
+  margin:0 0 9px;
+  color:var(--purple-ink);
+  text-wrap:balance;
+}
+.pyt-stage p{
+  font-size:14px;
+  line-height:1.55;
+  color:var(--muted);
+  margin:0;
+  max-width:31ch;
+}
+.pyt-breakdown{
+  margin-top:auto;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:11px;
+  line-height:1.5;
+  font-weight:700;
+  color:var(--purple);
+}
+.pyt-boundary{
+  margin:14px 2px 0;
+  color:rgba(255,255,255,.72);
+  font-size:11px;
+  line-height:1.5;
+}
+
+.fmge-signal{grid-column:1/-1;align-self:center;justify-self:stretch;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:12px 4px}.fmge-stat{padding:18px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:left}.fmge-stat strong{display:block;font-size:28px;line-height:1.05;letter-spacing:-.04em;color:var(--purple);font-variant-numeric:tabular-nums}.fmge-stat span{display:block;margin-top:6px;font-size:11px;line-height:1.45;color:var(--muted)}.curve.fmge-mode{align-items:center;min-height:210px;padding:18px 6px 24px}.curve.fmge-mode::before{display:none}
+
+/* today decision */
+.today-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:64px;align-items:center}
+.today-copy p{font-size:16px;line-height:1.75;color:rgba(255,255,255,.78);margin:18px 0 24px}
+.rule-list{display:grid;gap:10px}
+.rule{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+.rule:last-child{border-bottom:0}
+.rule-icon{width:28px;height:28px;border-radius:8px;background:var(--lav);color:var(--purple);display:grid;place-items:center;flex:0 0 auto}
+.rule-icon svg{width:15px;height:15px}
+.rule strong{display:block;font-size:13px;color:var(--purple-ink)}
+.rule span{display:block;font-size:12px;color:var(--quiet);margin-top:3px}
+.today-panel{background:rgba(47,39,52,.72);padding:14px;border-radius:16px;backdrop-filter:none}
+.today-screen{background:#fff;border-radius:12px;overflow:hidden}
+.today-head{display:flex;justify-content:space-between;gap:20px;padding:20px;background:var(--purple);color:white}
+.today-head strong{font-size:20px} .today-head span{font-size:11px;color:#E4D8E8}
+.today-head b{font-size:13px;font-variant-numeric:tabular-nums}
+.today-body{padding:10px 18px 16px}
+.task{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.task:last-child{border-bottom:0}
+.task-no{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--soft);font-size:11px;font-weight:700;color:var(--purple)}
+.task.priority .task-no{background:var(--warm);color:var(--orange)}
+.task strong{display:block;font-size:13px;color:var(--purple-ink)} .task small{display:block;font-size:11px;color:var(--quiet);margin-top:3px}
+.chip{border-radius:44px;padding:6px 8px;font-size:10px;font-weight:700;background:var(--soft);color:var(--muted)}
+.chip.due{background:var(--warm);color:#A94E24} .chip.advance{background:var(--lav);color:var(--purple)}
+
+
+/* Use NeuroFlip if — learner pain-point section */
+.for-you-shell{padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+.for-you-grid{display:grid;grid-template-columns:.66fr 1.34fr;gap:28px;align-items:start}
+.for-you-copy{position:sticky;top:112px}
+.for-you-copy-card{padding:28px 26px;border-radius:20px;background:linear-gradient(180deg,#F6EFE7 0%,#F2EAE0 100%);border:1px solid #E8D8CB;box-shadow:0 16px 38px rgba(34,20,40,.06),inset 0 1px 0 rgba(255,255,255,.72)}
+.for-you-copy .kicker{color:#8A5D48}
+.for-you-copy h2{margin:14px 0 0;max-width:7.5ch;color:var(--purple-ink)}
+.for-you-copy p{margin:18px 0 0;max-width:38ch;color:#6C5E59;font-size:16px;line-height:1.72}
+.for-you-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.for-you-pills span{display:inline-flex;align-items:center;min-height:34px;padding:0 12px;border-radius:999px;background:#F8F2EC;border:1px solid #E5D6C8;color:#6A5A55;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,.75)}
+.pain-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pain-card{position:relative;min-height:104px;padding:22px 20px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.05));box-shadow:inset 0 1px 0 rgba(255,255,255,.06);transition:transform .18s ease,border-color .18s ease,background-color .18s ease,box-shadow .18s ease;display:flex;align-items:center}
+.pain-card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.18);background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.06));box-shadow:0 12px 24px rgba(34,20,40,.08),inset 0 1px 0 rgba(255,255,255,.07)}
+.pain-card::before{content:"";position:absolute;left:20px;top:50%;transform:translateY(-50%);width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 6px rgba(235,129,78,.08)}
+.pain-card h3{margin:0;padding-left:24px;color:#fff;font-size:17px;line-height:1.28;letter-spacing:-.025em;text-wrap:balance}
+.pain-card:nth-child(4n+2)::before{background:#D9C5E9;box-shadow:0 0 0 6px rgba(217,197,233,.10)}
+.pain-card:nth-child(4n+3)::before{background:#C9E9D6;box-shadow:0 0 0 6px rgba(201,233,214,.10)}
+.pain-card:nth-child(4n+4)::before{background:#FFD8C4;box-shadow:0 0 0 6px rgba(255,216,196,.10)}
+.for-you-cta{grid-column:1/-1;margin-top:6px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 22px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(252,249,252,.94));border:1px solid rgba(255,255,255,.42);box-shadow:0 18px 36px rgba(34,20,40,.10)}
+.for-you-cta strong{display:block;color:var(--purple-ink);font-size:18px;line-height:1.3;letter-spacing:-.02em}
+.for-you-cta span{display:block;margin-top:5px;color:var(--muted);font-size:13px;line-height:1.55;max-width:42ch}
+.for-you-cta a{flex:0 0 auto;min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:0 20px;border-radius:999px;background:linear-gradient(180deg,#F18D57,#EB814E);color:var(--purple-ink);text-decoration:none;font-size:14px;font-weight:700;box-shadow:0 12px 20px rgba(235,129,78,.22)}
+.for-you-cta a:hover{transform:translateY(-1px);box-shadow:0 14px 24px rgba(235,129,78,.26)}
+
+
+/* testimonials — sourced from neuroflip.com */
+#testimonials > .wrap{
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  padding-left:28px;
+  padding-right:28px;
+}
+.testimonial-head{
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  gap:64px;
+  align-items:end;
+  margin-bottom:34px;
+}
+.testimonial-head h2{margin:14px 0 0}
+.testimonial-head p{
+  margin:0;
+  max-width:620px;
+  color:rgba(255,255,255,.78);
+  font-size:16px;
+  line-height:1.7;
+}
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+.testimonial-card{
+  position:relative;
+  min-height:330px;
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.34);
+  background:#F7F2EC;
+  box-shadow:0 16px 36px rgba(34,20,40,.08);
+  overflow:hidden;
+}
+.testimonial-card:nth-child(2){background:#F6F1F8}
+.testimonial-card:nth-child(3){background:#F0F6F1}
+.testimonial-card::after{
+  content:"“";
+  position:absolute;
+  right:18px;
+  top:2px;
+  font-size:92px;
+  line-height:1;
+  font-weight:700;
+  color:rgba(99,74,114,.08);
+  pointer-events:none;
+}
+.testimonial-person{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  position:relative;
+  z-index:1;
+}
+.testimonial-person img{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(99,74,114,.18);
+  background:#E4DCE8;
+}
+.testimonial-person strong{
+  display:block;
+  color:var(--purple-ink);
+  font-size:15px;
+  line-height:1.25;
+}
+.testimonial-person span{
+  display:inline-flex;
+  align-items:center;
+  min-height:25px;
+  margin-top:5px;
+  padding:0 9px;
+  border-radius:999px;
+  background:rgba(99,74,114,.08);
+  color:var(--purple);
+  font-size:10px;
+  font-weight:700;
+}
+.testimonial-quote{
+  position:relative;
+  z-index:1;
+  margin:22px 0 0;
+  color:var(--purple-ink);
+  font-size:16px;
+  line-height:1.62;
+  letter-spacing:-.012em;
+  font-weight:600;
+  text-wrap:pretty;
+}
+.testimonial-foot{
+  margin-top:auto;
+  padding-top:22px;
+  color:#786C75;
+  font-size:11px;
+  line-height:1.5;
+}
+.testimonial-proof{
+  margin-top:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  color:rgba(255,255,255,.68);
+  font-size:12px;
+}
+.testimonial-proof::before{
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--orange);
+}
+
+/* method */
+.method{background:transparent;color:white}
+.method .kicker{color:#F6E8EF} .method h2{color:white}
+.method-intro{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:end;margin-bottom:34px}
+.method-intro p{margin:0;max-width:680px;color:#E6DAEA;font-size:16px;line-height:1.7}
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.method-card{background:rgba(255,255,255,.9);color:var(--ink);border-radius:12px;padding:22px;backdrop-filter:none}
+.method-card.warm{background:rgba(255,245,235,.92)}
+.method-card h3{font-size:18px;color:var(--purple-ink);margin-bottom:12px}
+.method-row{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}
+.method-row:last-child{border-bottom:0} .method-row b{color:var(--purple);font-variant-numeric:tabular-nums}
+.boundary{padding:14px 0;border-bottom:1px solid #EACFBE} .boundary:last-child{border-bottom:0}
+.boundary strong{display:block;font-size:12px;color:var(--purple-ink)} .boundary span{display:block;font-size:12px;color:#6B5C56;margin-top:4px;line-height:1.55}
+
+/* close */
+.close{padding:82px 0 70px;background:transparent;border-bottom:0}
+.close-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:34px;align-items:center;background:linear-gradient(180deg,#F7F1EA 0%,#F4ECE4 100%);border:1px solid #EAD7C7;border-radius:22px;padding:34px;position:relative;overflow:hidden;box-shadow:0 22px 44px rgba(34,20,40,.10)}
+.close-card::before{content:"";position:absolute;inset:auto auto -64px -42px;width:180px;height:180px;border-radius:50%;background:rgba(235,129,78,.10);filter:blur(2px)}
+.close-card::after{content:"";position:absolute;width:160px;height:160px;border:28px solid rgba(210,188,229,.58);border-radius:50%;right:220px;bottom:-108px;opacity:.85}
+.close-copy{position:relative;z-index:1}
+.close-kicker{display:inline-flex;align-items:center;gap:10px;color:#8A5D48;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.10em}
+.close-kicker::before{content:"";width:24px;height:3px;border-radius:3px;background:var(--orange)}
+.close-card h2{font-size:clamp(30px,3.5vw,46px);line-height:1.02;letter-spacing:-.05em;margin:16px 0 12px;max-width:720px;color:var(--purple-ink)}
+.close-card p{margin:0;color:#6D605A;font-size:15px;line-height:1.7;max-width:700px}
+.close-sub{margin-top:12px;color:#7A6B65;font-size:13px;line-height:1.6;max-width:620px}
+.close-proof{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px;color:var(--purple-ink);font-size:15px;font-weight:700;line-height:1.35}
+.close-proof span{color:#C96C3F}
+.close-actions{position:relative;z-index:1;display:flex;flex-direction:column;gap:12px;align-items:stretch;min-width:350px}
+.close-download-label{font-size:11px;line-height:1.5;color:#836E64;text-align:center}
+.store-row{display:flex;gap:10px;align-items:center;justify-content:flex-end;position:relative;z-index:2;flex-wrap:wrap}
+.store{min-height:56px;display:flex;align-items:center;gap:10px;padding:0 16px;border:1px solid #DFD2C5;background:#fff;color:var(--purple-ink);border-radius:12px;text-decoration:none;min-width:166px;box-shadow:0 10px 20px rgba(39,24,47,.07);transition:transform .18s ease,background-color .18s ease,border-color .18s ease,box-shadow .18s ease}
+.store svg{width:22px;height:22px;flex:0 0 auto}
+.store small{display:block;font-size:9px;color:#7A727F;line-height:1.1}
+.store strong{display:block;font-size:13px;line-height:1.2;margin-top:2px}
+.store:hover{background:#FFF7F1;border-color:#F1D2BC;transform:translateY(-1px);box-shadow:0 12px 24px rgba(39,24,47,.10)}
+footer{padding:30px 0 38px;background:transparent}
+.footer-grid{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.footer-brand{display:flex;align-items:center;gap:10px;font-weight:700;color:white}
+.footer-brand img{width:23px;height:29px;object-fit:contain}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:rgba(255,255,255,.78)} .footer-links a{text-decoration:none}
+.footer-note{font-size:10px;color:rgba(255,255,255,.74);max-width:520px;text-align:right}
+
+
+
+/* Audited V14 — restrained transparency, one material language */
+section[id]{scroll-margin-top:88px}
+.nav.scrolled{background:var(--purple);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+.hero{padding:86px 0 92px}
+.hero-copy::after{display:none}
+h1{letter-spacing:-.04em;max-width:1040px}
+.hero-store{box-shadow:0 8px 22px rgba(30,18,36,.09)}
+.hero-social-proof{margin-top:16px}
+.section{padding:34px 0}
+.section > .wrap{padding:52px;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:rgba(255,255,255,.07);box-shadow:0 18px 44px rgba(34,20,40,.06);overflow:hidden}
+.section-head{gap:54px;margin-bottom:34px}
+.section-head h2,.today-copy h2,.method-intro h2{margin-top:0}
+.section-head p,.today-copy p,.method-intro p{color:rgba(255,255,255,.80)}
+#milestones > .wrap{background:rgba(255,255,255,.10)}
+.terrain{background:rgba(255,255,255,.93);border:1px solid rgba(255,255,255,.44);box-shadow:0 12px 30px rgba(34,20,40,.07);backdrop-filter:none;-webkit-backdrop-filter:none}
+.truth-section > .wrap{background:transparent;border:0;border-radius:0;box-shadow:none;padding-left:28px;padding-right:28px}
+#how-pyts > .wrap{
+  padding:52px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:16px;
+  background:rgba(255,255,255,.07);
+  box-shadow:0 18px 44px rgba(34,20,40,.06);
+  overflow:visible;
+}
+#milestones > .wrap{
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  padding-left:28px;
+  padding-right:28px;
+}
+.terrain-badge{
+  min-height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 14px;
+  border-radius:44px;
+  background:rgba(255,255,255,.72);
+  color:var(--purple);
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.truth-card{background:rgba(255,255,255,.89);border:1px solid rgba(255,255,255,.35);backdrop-filter:none;-webkit-backdrop-filter:none;min-height:210px}
+.truth-card.primary{background:rgba(77,57,89,.68);border-color:rgba(255,255,255,.16)}
+.today-panel{background:rgba(47,39,52,.74);border:1px solid rgba(255,255,255,.12);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 18px 40px rgba(34,20,40,.10)}
+#today > .wrap{background:rgba(255,255,255,.055)}
+.rule{border-color:rgba(255,255,255,.14)}
+.rule strong{color:white}.rule span{color:rgba(255,255,255,.70)}
+#method > .wrap{background:rgba(255,255,255,.09)}
+.method-card{background:rgba(255,255,255,.93);backdrop-filter:none;-webkit-backdrop-filter:none;border:0}
+.method-card.warm{background:rgba(255,245,235,.95)}
+.close{padding:34px 0 52px}
+.close-card{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 44px rgba(34,20,40,.06);backdrop-filter:none;-webkit-backdrop-filter:none;color:white}
+.close-card::after{display:none}
+.close-card h2{color:white}.close-card p{color:rgba(255,255,255,.78)}
+.footer-note{font-size:11px;line-height:1.55}
+.bar-col{appearance:none;-webkit-appearance:none;border:0;background:transparent;padding:0;font:inherit;color:inherit;cursor:pointer}
+.bar-col:focus-visible{outline:3px solid var(--orange);outline-offset:4px;border-radius:10px}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.nav{background:var(--purple)}}
+
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:980px){
+  .close-card{grid-template-columns:1fr;gap:24px}
+  .close-actions{min-width:0}
+  .store-row{justify-content:flex-start}
+  .testimonial-grid{grid-template-columns:1fr 1fr}
+  .testimonial-card:last-child{grid-column:1/-1}
+  .testimonial-head{grid-template-columns:1fr;gap:18px}
+  .for-you-shell{padding:0}
+  .for-you-grid{grid-template-columns:1fr;gap:22px}
+  .for-you-copy{position:static}
+  .for-you-copy-card{padding:24px 20px}
+  .for-you-copy h2{max-width:12ch}
+  .section > .wrap{padding:42px;border-radius:16px}
+  :root{--gutter:22px}
+  .nav-links{display:none} .menu{display:flex}
+  .nav.open .nav-links{display:flex;position:absolute;top:76px;left:0;right:0;background:var(--purple);border-top:1px solid rgba(255,255,255,.14);padding:12px var(--gutter) 18px;flex-direction:column;align-items:stretch;gap:0;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .nav.open .nav-links a{padding:12px 0}
+  .nav.open .nav-action{margin-top:8px}
+  .section-head,.today-grid,.method-intro,.close-card{grid-template-columns:1fr}
+  .hero{padding-top:64px}
+  .evidence-board{min-height:auto;max-width:700px}
+  .terrain-grid{grid-template-columns:1fr} .curve-area{border-right:0;border-bottom:1px solid var(--line)}
+  .pyt-pipeline{grid-template-columns:1fr;gap:14px}
+  .pyt-stage{min-height:0;padding:24px 22px 20px}
+  .pyt-stage:not(:last-child)::after{content:"↓";right:24px;top:auto;bottom:-25px;transform:none;border-color:#6A507D}
+  .pyt-stage p{max-width:none}
+  .fmge-signal{grid-template-columns:1fr}
+  .method-grid{grid-template-columns:1fr}
+  .close-card{gap:22px} .store-row{justify-content:flex-start}
+  .close-card::after{display:none}
+}
+@media(max-width:700px){
+  .close-card{padding:24px 18px;border-radius:18px}
+  .close-card::after{display:none}
+  .close-proof{font-size:14px}
+  .close-actions{gap:10px}
+  .store-row{flex-direction:column;align-items:stretch}
+  .store{width:100%;min-width:0;justify-content:flex-start}
+  #testimonials > .wrap{padding-left:0;padding-right:0}
+  .testimonial-grid{grid-template-columns:1fr}
+  .testimonial-card:last-child{grid-column:auto}
+  .testimonial-card{min-height:0;padding:20px}
+  .testimonial-quote{font-size:19px;margin-top:24px}
+  .testimonial-head{margin-bottom:24px}
+  .for-you-shell{padding:0;border-radius:0}
+  .for-you-pills{gap:8px}
+  .for-you-pills span{min-height:32px;font-size:11px}
+  .pain-grid{grid-template-columns:1fr}
+  .pain-card{min-height:88px;padding:18px 16px;border-radius:16px}
+  .pain-card h3{font-size:16px;line-height:1.3}
+  .for-you-cta{flex-direction:column;align-items:stretch;padding:18px 16px}
+  .for-you-cta a{width:100%}
+  .proof-avatar,.proof-avatar img,.proof-avatar b{width:32px;height:32px}
+  .hero-social-proof{gap:10px;font-size:14px}
+  .section{padding:18px 0}
+  .section > .wrap{padding:28px 20px;border-radius:16px}
+  .close{padding:18px 0 36px}
+  .close-card{border-radius:16px}
+  :root{--gutter:20px}
+  .nav-inner{height:70px}
+  .nav.open .nav-links{top:70px}
+  .hero{padding:44px 0 54px}
+  h1{font-size:clamp(39px,11vw,52px);line-height:1.01}
+  .hero-lead{font-size:16px}
+  .hero-actions .btn{width:100%}
+  .hero-store-row{grid-template-columns:1fr}
+  .download-shell{padding:26px}
+  .download-shell h2{font-size:26px}
+  .evidence-board{padding:20px 0 0}
+  .board-shell{padding:16px}
+  .logo-card{left:14px;top:-22px;width:67px;height:80px;border-radius:12px} .logo-card img{width:36px;height:48px}
+  .board-head{padding-top:54px;flex-direction:column}
+  .exam-switch{width:100%} .exam-switch button{flex:1}
+  .path-row{grid-template-columns:58px 1fr 72px;gap:9px}
+  .board-orbit{position:static;margin-top:14px;width:100%}
+  .metric-grid{grid-template-columns:1fr 1fr} .metric{padding:20px;border-bottom:1px solid var(--line)} .metric:nth-child(2n){border-right:0} .metric:nth-last-child(-n+2){border-bottom:0}
+  .section{padding:68px 0} .section-head{gap:18px;margin-bottom:28px}
+  h2{font-size:34px}
+  .terrain-top{align-items:flex-start;flex-direction:column}
+  .terrain-tabs{width:100%} .terrain-tabs button{flex:1}
+  .terrain{border-radius:18px}
+  .curve-area{padding:22px 14px 24px;overflow:visible}
+  .axis-label{margin-bottom:12px}
+  .curve{min-width:0;display:flex;flex-direction:column;gap:10px;padding:0}
+  .bar-col{grid-template-columns:58px minmax(0,1fr) 42px;gap:8px;padding:8px 8px}
+  .bar-label strong{font-size:16px}.bar-label span{font-size:10px}
+  .bar-track{height:26px}
+  .bar{width:var(--pct)}
+  .bar-value{font-size:22px}
+  .bar-col.midway::after{display:none}
+  .terrain-side{padding:22px}
+  .side-big{font-size:44px}
+  .side-stats{grid-template-columns:1fr 1fr}
+  .side-cta{width:100%}
+  .today-grid{gap:32px}
+  .today-panel{padding:9px} .today-body{padding:8px 14px 12px}
+  .task{grid-template-columns:38px 1fr} .task .chip{grid-column:2;justify-self:start}
+  .close{padding:62px 0} .close-card{padding:24px}
+  .store-row{flex-direction:column;align-items:stretch} .store{width:100%;justify-content:center}
+  .footer-grid{align-items:flex-start;flex-direction:column} .footer-note{text-align:left}
+}
+@media(max-width:359px){
+  :root{--gutter:16px}
+  .metric-grid{grid-template-columns:1fr} .metric{border-right:0!important} .metric:nth-last-child(-n+2){border-bottom:1px solid var(--line)} .metric:last-child{border-bottom:0}
+  .side-stats{grid-template-columns:1fr}
+  .path-row{grid-template-columns:52px 1fr 66px}
+  .path-value strong{font-size:16px}
+  .terrain-tabs{display:grid;grid-template-columns:repeat(3,1fr);width:100%}
+}
+
+@media(max-width:700px){
+  .close-card{padding:24px 18px;border-radius:18px}
+  .close-card::after{display:none}
+  .close-proof{font-size:14px}
+  .close-actions{gap:10px}
+  .store-row{flex-direction:column;align-items:stretch}
+  .store{width:100%;min-width:0;justify-content:flex-start}
+  #testimonials > .wrap{padding-left:0;padding-right:0}
+  .testimonial-grid{grid-template-columns:1fr}
+  .testimonial-card:last-child{grid-column:auto}
+  .testimonial-card{min-height:0;padding:20px}
+  .testimonial-quote{font-size:19px;margin-top:24px}
+  .testimonial-head{margin-bottom:24px}
+  .for-you-shell{padding:0;border-radius:0}
+  .for-you-pills{gap:8px}
+  .for-you-pills span{min-height:32px;font-size:11px}
+  .pain-grid{grid-template-columns:1fr}
+  .pain-card{min-height:88px;padding:18px 16px;border-radius:16px}
+  .pain-card h3{font-size:16px;line-height:1.3}
+  .for-you-cta{flex-direction:column;align-items:stretch;padding:18px 16px}
+  .for-you-cta a{width:100%}
+  .section{padding:16px 0}
+  .section > .wrap{padding:28px 20px;border-radius:16px}
+  .truth-section > .wrap{padding:34px 0;border:0}
+  #how-pyts > .wrap{padding:34px 24px;border-radius:16px}
+  #milestones > .wrap{padding:34px 0}
+  .hero{padding:54px 0 52px}
+  h1{font-size:clamp(40px,11vw,50px);line-height:1.02;letter-spacing:-.035em;margin-top:20px;margin-bottom:20px}
+  h2{font-size:30px;line-height:1.08;letter-spacing:-.03em}
+  .section-head{gap:14px;margin-bottom:24px}
+  .pyt-stage{padding:24px 20px 22px}
+  .pyt-metric{font-size:38px}
+  .pyt-stage h3{font-size:20px}
+  .pyt-boundary{font-size:11px;margin-top:14px}
+  .section-head p,.today-copy p,.method-intro p{font-size:15px;line-height:1.65}
+  .terrain-title strong{font-size:14px}.terrain-title span{font-size:10px}
+  .bar-label span{font-size:10px}
+  .truth-card{min-height:0;padding:22px}
+  .truth-card h3{font-size:21px}
+  .today-grid{gap:26px}
+  .close{padding:16px 0 34px}.close-card{padding:24px 20px}
+  .terrain-tabs{display:grid;grid-template-columns:repeat(3,1fr);width:100%}
+  .terrain-tabs button,.tab-disabled{width:100%;padding:0 8px;min-width:0}
+  .tab-disabled small{display:none}
+}
+@media(max-width:359px){
+  .section > .wrap{padding:24px 16px}
+  #how-pyts > .wrap{padding:28px 16px;border-radius:16px}
+  #milestones > .wrap{padding:28px 0}
+  h1{font-size:38px}
+  h2{font-size:28px}
+}
+
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Design Director V38 — final CTA repair */
+.close{
+  padding:56px 0 68px;
+  background:transparent;
+}
+.close-card{
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);
+  gap:40px;
+  align-items:center;
+  padding:36px;
+  border:1px solid #E7D8CC;
+  border-radius:16px;
+  background:#FFF5EB;
+  color:var(--purple-ink);
+  box-shadow:0 1px 2px rgba(16,24,40,.05);
+  overflow:hidden;
+}
+.close-card::before,
+.close-card::after{
+  display:none!important;
+}
+.close-copy,
+.close-actions{
+  position:relative;
+  z-index:1;
+}
+.close-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:#8A5D48;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+}
+.close-kicker::before{
+  content:"";
+  width:24px;
+  height:3px;
+  border-radius:3px;
+  background:var(--orange);
+}
+.close-card h2{
+  margin:14px 0 12px;
+  max-width:720px;
+  color:var(--purple-ink);
+  font-size:clamp(32px,3.7vw,48px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  text-wrap:balance;
+}
+.close-card p{
+  margin:0;
+  max-width:700px;
+  color:#665C58;
+  font-size:15px;
+  line-height:1.7;
+  text-wrap:pretty;
+}
+.close-proof-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:22px;
+  color:#725F56;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.45;
+}
+.close-avatars{
+  display:flex;
+  align-items:center;
+  flex:0 0 auto;
+  padding-left:10px;
+}
+.close-avatars img{
+  width:38px;
+  height:38px;
+  margin-left:-10px;
+  border:2px solid #FFF5EB;
+  border-radius:50%;
+  object-fit:cover;
+  background:#E5DBE9;
+}
+.close-avatars img:first-child{
+  margin-left:0;
+}
+.close-actions{
+  padding:24px;
+  border:1px solid #E2D5CB;
+  border-radius:12px;
+  background:#FFFFFF;
+  box-shadow:0 1px 2px rgba(16,24,40,.05);
+}
+.close-actions-title{
+  color:var(--purple-ink);
+  font-size:18px;
+  line-height:1.3;
+  font-weight:700;
+  letter-spacing:-.02em;
+}
+.close-actions-copy{
+  margin-top:7px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.55;
+}
+.close .store-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:18px;
+}
+.close .store{
+  width:100%;
+  min-width:0;
+  min-height:56px;
+  justify-content:flex-start;
+  padding:0 14px;
+  border:1px solid #DDD4DF;
+  border-radius:10px;
+  background:#FCFCFC;
+  color:var(--purple-ink);
+  box-shadow:none;
+  transition:transform .18s ease,border-color .18s ease,background-color .18s ease;
+}
+.close .store:hover{
+  transform:translateY(-1px);
+  border-color:#CDBFD3;
+  background:#FFFFFF;
+}
+.close .store small{
+  color:#787878;
+}
+.close .store small{
+  color:#6D626B;
+  font-size:10px;
+}
+.close .store strong{
+  color:var(--purple-ink);
+}
+@media(max-width:980px){
+  .close-card{
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:28px;
+  }
+  .close-actions{
+    max-width:none;
+  }
+}
+@media(max-width:700px){
+  .close{
+    padding:28px 0 42px;
+  }
+  .close-card{
+    padding:24px 20px;
+    border-radius:16px;
+  }
+  .close-card h2{
+    font-size:34px;
+  }
+  .close-proof-row{
+    align-items:flex-start;
+  }
+  .close-actions{
+    padding:18px;
+  }
+  .close .store-row{
+    grid-template-columns:1fr;
+  }
+  .close .store{
+    min-height:56px;
+  }
+}
+@media(max-width:359px){
+  .close-card{
+    padding:20px 16px;
+  }
+  .close-card h2{
+    font-size:31px;
+  }
+}
+
+
+/* V39 — Appllama + Impeccable + Design Director final CTA */
+.close{
+  padding:52px 0 68px;
+}
+.close-card{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(330px,.8fr);
+  gap:48px;
+  align-items:center;
+  padding:40px;
+  border:1px solid #E7D8CC;
+  border-radius:16px;
+  background:#FFF5EB;
+  color:var(--purple-ink);
+  box-shadow:0 1px 2px rgba(16,24,40,.05);
+}
+.close-card::before,
+.close-card::after{
+  display:none!important;
+}
+.close-copy{
+  position:relative;
+  z-index:1;
+  min-width:0;
+}
+.close-card h2{
+  margin:0 0 16px;
+  max-width:720px;
+  color:var(--purple-ink);
+  font-size:clamp(34px,3.7vw,48px);
+  line-height:1.03;
+  letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.close-card p{
+  margin:0;
+  max-width:660px;
+  color:#665C58;
+  font-size:15px;
+  line-height:1.7;
+  text-wrap:pretty;
+}
+.close-actions{
+  position:relative;
+  z-index:1;
+  min-width:0;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.close-actions-title{
+  color:var(--purple-ink);
+  font-size:19px;
+  line-height:1.3;
+  font-weight:700;
+  letter-spacing:-.02em;
+}
+.close-actions-copy{
+  margin-top:6px;
+  max-width:34ch;
+  color:#6D626B;
+  font-size:12px;
+  line-height:1.55;
+}
+.close .store-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:18px;
+}
+.close .store{
+  width:100%;
+  min-width:0;
+  min-height:58px;
+  justify-content:flex-start;
+  padding:0 14px;
+  border:1px solid #D9D2DC;
+  border-radius:10px;
+  background:#FFFFFF;
+  color:var(--purple-ink);
+  box-shadow:none;
+  transition:transform .18s ease,border-color .18s ease,background-color .18s ease;
+}
+.close .store:hover{
+  transform:translateY(-1px);
+  border-color:#C7BACD;
+  background:#FCFCFC;
+}
+.close .store:active{
+  transform:translateY(0);
+}
+.close-platform-note{
+  margin-top:10px;
+  color:#6D626B;
+  font-size:11px;
+  line-height:1.4;
+}
+@media(max-width:980px){
+  .close-card{
+    grid-template-columns:1fr;
+    gap:28px;
+    padding:32px;
+  }
+  .close-actions-copy{
+    max-width:none;
+  }
+}
+@media(max-width:700px){
+  .close{
+    padding:28px 0 42px;
+  }
+  .close-card{
+    gap:26px;
+    padding:24px 20px;
+    border-radius:16px;
+  }
+  .close-card h2{
+    font-size:34px;
+    line-height:1.04;
+  }
+  .close-card p{
+    font-size:14px;
+  }
+  .close .store-row{
+    grid-template-columns:1fr;
+  }
+  .close .store{
+    min-height:58px;
+  }
+}
+@media(max-width:359px){
+  .close-card{
+    padding:20px 16px;
+  }
+  .close-card h2{
+    font-size:31px;
+  }
+}
+
+
+/* V41 — Appllama + Impeccable + Design Director repair */
+
+/* Hero ranking badge */
+.hero .hero-rank-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:40px;
+  padding:0 16px;
+  border:1px solid rgba(255, 212, 150, .82);
+  border-radius:999px;
+  background:rgba(255, 214, 166, .045);
+  color:#FFD7A6;
+  font-size:13px;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:-0.01em;
+  text-transform:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+.hero .hero-rank-badge::before{display:none}
+.hero .hero-rank-badge .badge-sparkle{
+  width:15px;
+  height:15px;
+  flex:0 0 auto;
+}
+
+/* Hero proof avatars reuse published NeuroFlip learner testimonial photos */
+.hero-social-proof .proof-avatar img{
+  display:block;
+  width:36px;
+  height:36px;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,.68);
+  box-shadow:0 7px 16px rgba(30,18,36,.16);
+  background:#E9E0ED;
+}
+
+/* V57 — release resilience: real learner photos degrade cleanly to initials */
+.proof-avatar img,.proof-avatar b{grid-area:1/1}
+.proof-avatar img[hidden],.testimonial-avatar img[hidden]{display:none!important}
+.hero-exam-rotator.is-static{display:inline;min-width:0;white-space:normal}
+
+/* Milestones — stable labels, counts live inside their proportional bars */
+.curve{
+  gap:8px;
+}
+.bar-col{
+  grid-template-columns:64px minmax(0,1fr);
+  gap:14px;
+  min-height:50px;
+  padding:8px 10px;
+}
+.bar-col[aria-pressed="true"]{
+  transform:none;
+}
+.bar-col.midway::after{
+  right:18px;
+  top:7px;
+  transform:none;
+  z-index:3;
+}
+.bar-label{
+  min-width:0;
+  gap:3px;
+}
+.bar-label strong{
+  font-size:18px;
+  line-height:1.05;
+}
+.bar-label span{
+  font-size:10px;
+  line-height:1.2;
+}
+.bar-track{
+  height:32px;
+  overflow:hidden;
+}
+.bar{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  min-width:58px;
+  padding:0 10px;
+  box-sizing:border-box;
+}
+.bar-count{
+  position:relative;
+  z-index:2;
+  color:var(--purple-ink);
+  font-size:13px;
+  line-height:1;
+  font-weight:700;
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+.bar-value{
+  display:none!important;
+}
+
+/* Testimonials — same transparent material language as "Use NeuroFlip if" */
+.testimonial-grid{
+  gap:14px;
+}
+.testimonial-card,
+.testimonial-card:nth-child(2),
+.testimonial-card:nth-child(3){
+  min-height:330px;
+  padding:22px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:16px;
+  background:rgba(255,255,255,.075);
+  box-shadow:none;
+  color:#FFFFFF;
+}
+.testimonial-card::after{
+  display:none;
+}
+.testimonial-person{
+  gap:12px;
+}
+.testimonial-person img{
+  width:52px;
+  height:52px;
+  border:2px solid rgba(255,255,255,.32);
+  background:rgba(255,255,255,.10);
+}
+.testimonial-person strong{
+  color:#FFFFFF;
+  font-size:15px;
+  line-height:1.25;
+  font-weight:700;
+}
+.testimonial-person span{
+  min-height:25px;
+  margin-top:5px;
+  padding:0 9px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.08);
+  color:#F3EAF8;
+  font-size:10px;
+  font-weight:700;
+}
+.testimonial-quote{
+  margin:22px 0 0;
+  color:rgba(255,255,255,.94);
+  font-family:inherit;
+  font-size:15px;
+  line-height:1.67;
+  letter-spacing:0;
+  font-weight:500;
+  text-wrap:pretty;
+}
+.testimonial-foot{
+  margin-top:auto;
+  padding-top:20px;
+  color:rgba(255,255,255,.60);
+  font-size:11px;
+  line-height:1.45;
+}
+.testimonial-proof{
+  color:rgba(255,255,255,.66);
+}
+
+/* Focus treatment for milestone buttons */
+.bar-col:focus-visible{
+  outline:3px solid rgba(235,129,78,.55);
+  outline-offset:2px;
+}
+
+/* Narrow widths */
+@media(max-width:700px){
+  .hero .hero-rank-badge{
+    min-height:38px;
+    padding:0 14px;
+    font-size:12px;
+  }
+  .bar-col{
+    grid-template-columns:54px minmax(0,1fr);
+    gap:9px;
+    min-height:48px;
+    padding:7px 7px;
+  }
+  .bar-label strong{font-size:16px}
+  .bar-track{height:30px}
+  .bar{min-width:52px;padding:0 8px}
+  .bar-count{font-size:12px}
+  .bar-col.midway::after{display:none}
+  .testimonial-card{
+    min-height:0;
+    padding:20px;
+  }
+  .testimonial-quote{
+    font-size:14px;
+    line-height:1.68;
+  }
+}
+@media(max-width:359px){
+  .hero .hero-rank-badge{
+    gap:7px;
+    padding:0 11px;
+    font-size:11px;
+  }
+  .hero .hero-rank-badge .badge-sparkle{
+    width:13px;
+    height:13px;
+  }
+}
+
+
+/* V43 — final resilience + accessibility completion */
+.testimonial-avatar{
+  display:grid;
+  place-items:center;
+  width:52px;
+  height:52px;
+  flex:0 0 auto;
+}
+.testimonial-avatar img,
+.testimonial-avatar b{
+  grid-area:1/1;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+}
+.testimonial-avatar b{
+  display:grid;
+  place-items:center;
+  border:2px solid rgba(255,255,255,.24);
+  background:rgba(255,255,255,.10);
+  color:#FFFFFF;
+  font-size:12px;
+  font-weight:700;
+}
+.testimonial-avatar b[hidden]{display:none!important}
+
+.skip-link{
+  position:fixed;
+  left:16px;
+  top:12px;
+  z-index:9999;
+  min-height:44px;
+  display:flex;
+  align-items:center;
+  padding:0 16px;
+  border-radius:10px;
+  background:#FFFFFF;
+  color:var(--purple-ink);
+  font-size:13px;
+  font-weight:700;
+  text-decoration:none;
+  transform:translateY(-160%);
+  transition:transform .18s ease;
+  box-shadow:0 8px 20px rgba(30,18,36,.14);
+}
+.skip-link:focus-visible{transform:translateY(0)}
+
+
+/* V45 — Drive-corrected milestones + UX density + store-icon polish */
+.milestone-summary{
+  display:flex;
+  align-items:center;
+  gap:8px 14px;
+  flex-wrap:wrap;
+}
+.milestone-summary > span{
+  color:var(--quiet);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.milestone-summary > strong{
+  color:var(--purple);
+  font-size:11px;
+  line-height:1.4;
+  font-weight:700;
+  white-space:nowrap;
+}
+.milestone-summary > strong + strong{
+  position:relative;
+}
+.milestone-summary > strong + strong::before{
+  content:"";
+  display:inline-block;
+  width:3px;
+  height:3px;
+  margin:0 10px 2px 0;
+  border-radius:50%;
+  background:#C9B9D2;
+}
+
+/* Graph: show true cumulative PYT burden while preserving inside-bar labels */
+.bar{
+  min-width:56px;
+}
+.bar-count{
+  min-width:max-content;
+  text-align:right;
+}
+.bar.last .bar-count{
+  color:#234331;
+}
+
+/* App-store icons: one coherent tile grammar */
+.hero-store .store-brand-icon,
+.close .store .store-brand-icon{
+  width:38px;
+  height:38px;
+  flex:0 0 38px;
+  display:grid;
+  place-items:center;
+  border:1px solid #E4DEE7;
+  border-radius:10px;
+  background:#F8F6F9;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+}
+.hero-store .store-brand-icon svg,
+.close .store .store-brand-icon svg{
+  width:22px;
+  height:22px;
+  display:block;
+}
+.hero-store .apple-mark,
+.close .store .apple-mark{
+  color:#2F2734;
+}
+.hero-store .play-mark svg,
+.close .store .play-mark svg{
+  width:23px;
+  height:23px;
+}
+.hero-store,
+.close .store{
+  gap:12px;
+}
+
+/* The store label should align optically with the icon tile */
+.hero-store > span:last-child,
+.close .store > span:last-child{
+  min-width:0;
+  text-align:left;
+}
+
+@media(max-width:700px){
+  .milestone-summary{
+    gap:7px 10px;
+  }
+  .milestone-summary > strong + strong::before{
+    margin-right:7px;
+  }
+  .hero-store .store-brand-icon,
+  .close .store .store-brand-icon{
+    width:40px;
+    height:40px;
+    flex-basis:40px;
+  }
+}
+
+
+/* ============================================================
+   V47 historical cascade layer. Typography behavior is superseded
+   by V58 / Typography Authority V3 below.
+   ============================================================ */
+
+:root{
+  --quiet:#787878; /* canonical neutral; AA-safe on white */
+  --web-display:clamp(48px,4.6vw,64px);
+  --web-section:clamp(32px,3.6vw,46px);
+  --web-body:16px;
+  --web-small:14px;
+}
+
+html{
+  text-size-adjust:100%;
+  -webkit-text-size-adjust:100%;
+}
+body{
+  font-synthesis:none;
+  font-size:var(--web-body);
+  line-height:1.6;
+}
+::selection{
+  background:#FFE2C8;
+  color:#2F2734;
+}
+
+/* Typography roles */
+h1{
+  font-size:var(--web-display);
+  line-height:1.02;
+  letter-spacing:-.04em;
+  font-weight:700;
+  margin:24px auto;
+}
+h2,
+.section-head h2,
+.testimonial-head h2,
+.for-you-copy h2{
+  font-size:var(--web-section);
+  line-height:1.08;
+  letter-spacing:-.03em;
+  font-weight:700;
+}
+h3{
+  letter-spacing:-.02em;
+}
+.hero-lead{
+  font-size:18px;
+  line-height:1.65;
+  max-width:68ch;
+}
+.section-head p,
+.testimonial-head p,
+.for-you-copy p,
+.close-card p{
+  font-size:16px;
+  line-height:1.65;
+  text-wrap:pretty;
+}
+.pyt-stage p{
+  line-height:1.6;
+}
+.pyt-breakdown{
+  font-weight:700;
+}
+.pyt-metric,
+.side-big,
+.bar-count,
+.side-chip strong{
+  font-variant-numeric:tabular-nums;
+}
+.pyt-metric{
+  letter-spacing:-.04em;
+}
+.side-big{
+  line-height:.96;
+  letter-spacing:-.04em;
+}
+.terrain-side h3{
+  line-height:1.2;
+  letter-spacing:-.025em;
+}
+.terrain-side p{
+  font-size:14px;
+  line-height:1.65;
+}
+.side-chip span{
+  font-size:11px;
+}
+.side-rule,
+.side-note{
+  font-size:12px;
+}
+.side-note{
+  color:#725E55;
+}
+.hero-store small,
+.store small{
+  font-size:10px;
+  line-height:1.15;
+}
+.testimonial-person strong{
+  font-size:16px;
+  line-height:1.3;
+  font-weight:700;
+}
+.testimonial-person > div > span{
+  min-height:24px;
+  display:inline-flex;
+  align-items:center;
+  margin-top:5px;
+  padding:0 9px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  color:#F3EAF8;
+  font-size:10px;
+  line-height:1;
+  font-weight:700;
+}
+.testimonial-person .testimonial-avatar{
+  width:52px;
+  height:52px;
+  min-height:0;
+  margin:0;
+  padding:0;
+  border:0;
+  background:transparent;
+  border-radius:50%;
+}
+.testimonial-quote{
+  font-size:16px;
+  line-height:1.65;
+  font-weight:500;
+  letter-spacing:0;
+}
+.testimonial-foot,
+.testimonial-proof{
+  color:rgba(255,255,255,.74);
+}
+.close-card h2{
+  line-height:1.06;
+  letter-spacing:-.035em;
+}
+.close-actions-copy{
+  font-size:13px;
+  line-height:1.55;
+}
+.footer-note{
+  font-size:11px;
+  line-height:1.55;
+}
+
+/* Spacing rhythm: use the canonical 4/8/12/16/20/24/32/44 scale */
+.section{
+  padding:44px 0;
+}
+.section > .wrap{
+  padding:44px;
+}
+#how-pyts > .wrap,
+#for-you > .wrap{
+  padding:44px;
+}
+#milestones > .wrap,
+#testimonials > .wrap{
+  padding:0;
+}
+.section-head,
+.testimonial-head{
+  gap:44px;
+  margin-bottom:32px;
+}
+.pyt-pipeline{
+  gap:16px;
+}
+.pyt-stage{
+  padding:24px;
+}
+.pyt-step{
+  margin-bottom:20px;
+}
+.terrain{
+  border-radius:16px;
+  box-shadow:var(--shadow);
+}
+.terrain-top{
+  padding:20px 24px;
+}
+.curve-area{
+  padding:24px;
+}
+.terrain-side{
+  padding:24px;
+  gap:20px;
+}
+.bar-col{
+  border-radius:12px;
+  padding:8px 10px;
+}
+.for-you-grid{
+  gap:24px;
+}
+.for-you-copy-card{
+  padding:24px;
+  border-radius:16px;
+  background:#F6EFE7;
+  box-shadow:var(--shadow);
+}
+.for-you-copy p{
+  margin-top:16px;
+}
+.pain-grid{
+  gap:12px;
+}
+.pain-card{
+  min-height:96px;
+  padding:20px;
+  border-radius:16px;
+  background:rgba(255,255,255,.075);
+  box-shadow:none;
+}
+.pain-card:hover{
+  background:rgba(255,255,255,.10);
+  box-shadow:none;
+}
+.for-you-cta{
+  margin-top:4px;
+  padding:20px;
+  border-radius:16px;
+  background:#FFFFFF;
+  box-shadow:var(--shadow);
+}
+.for-you-cta a,
+.side-cta{
+  background:var(--orange);
+  box-shadow:var(--shadow);
+}
+.testimonial-grid{
+  gap:16px;
+}
+.testimonial-card{
+  padding:24px;
+  border-radius:16px;
+  box-shadow:none;
+}
+.testimonial-quote{
+  margin-top:20px;
+}
+.close{
+  padding:44px 0 52px;
+}
+.close-card{
+  padding:32px;
+  gap:44px;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+}
+.close .store-row{
+  margin-top:16px;
+}
+footer{
+  padding:32px 0 44px;
+}
+
+/* Remove the now-unused visual styling for the redundant pills. */
+.for-you-pills{display:none!important}
+
+/* Consistent browser + focus surfaces */
+a{
+  text-underline-offset:.18em;
+}
+.bar-col:focus-visible,
+a:focus-visible,
+button:focus-visible{
+  outline:3px solid #FFE2C8;
+  outline-offset:3px;
+}
+
+/* Current web badge: keep the user-approved exception compact and stable. */
+.hero .hero-rank-badge{
+  white-space:nowrap;
+}
+
+/* Mobile typography + spacing */
+@media(max-width:700px){
+  .section{
+    padding:32px 0;
+  }
+  .section > .wrap{
+    padding:24px 20px;
+  }
+  #how-pyts > .wrap,
+  #for-you > .wrap{
+    padding:24px 20px;
+  }
+  #milestones > .wrap,
+  #testimonials > .wrap{
+    padding:0;
+  }
+  .section-head,
+  .testimonial-head{
+    gap:16px;
+    margin-bottom:24px;
+  }
+  h1{
+    font-size:clamp(38px,10.7vw,48px);
+    line-height:1.04;
+    letter-spacing:-.035em;
+    margin:20px auto 18px;
+  }
+  h2,
+  .section-head h2,
+  .testimonial-head h2,
+  .for-you-copy h2{
+    font-size:30px;
+    line-height:1.12;
+    letter-spacing:-.025em;
+  }
+  .hero-lead{
+    font-size:16px;
+    line-height:1.65;
+  }
+  .section-head p,
+  .testimonial-head p,
+  .for-you-copy p,
+  .close-card p{
+    font-size:15px;
+    line-height:1.65;
+  }
+  .pyt-stage{
+    padding:20px;
+  }
+  .pyt-stage h3{
+    font-size:19px;
+    line-height:1.25;
+  }
+  .terrain-top{
+    padding:20px;
+    gap:12px;
+  }
+  .curve-area,
+  .terrain-side{
+    padding:20px;
+  }
+  .bar-col{
+    min-height:48px;
+    padding:8px;
+  }
+  .terrain-side h3{
+    font-size:22px;
+  }
+  .terrain-side p{
+    font-size:14px;
+  }
+  .for-you-grid{
+    gap:20px;
+  }
+  .for-you-copy-card{
+    padding:20px;
+  }
+  .pain-card{
+    min-height:84px;
+    padding:16px;
+  }
+  .pain-card h3{
+    font-size:16px;
+    line-height:1.32;
+  }
+  .for-you-cta{
+    padding:18px 16px;
+  }
+  .testimonial-card{
+    padding:20px;
+  }
+  .testimonial-quote{
+    font-size:15px;
+    line-height:1.68;
+  }
+  .close{
+    padding:32px 0 44px;
+  }
+  .close-card{
+    padding:24px 20px;
+    gap:24px;
+  }
+  .close-card h2{
+    font-size:32px;
+    line-height:1.08;
+  }
+  footer{
+    padding:32px 0 40px;
+  }
+}
+@media(max-width:359px){
+  :root{--gutter:16px}
+  .section > .wrap,
+  #how-pyts > .wrap,
+  #for-you > .wrap{
+    padding-left:16px;
+    padding-right:16px;
+  }
+  #milestones > .wrap,
+  #testimonials > .wrap{
+    padding-left:0;
+    padding-right:0;
+  }
+  .hero .hero-rank-badge{
+    min-height:36px;
+    gap:6px;
+    padding:0 10px;
+    font-size:10.5px;
+  }
+  .hero .hero-rank-badge .badge-sparkle{
+    width:12px;
+    height:12px;
+  }
+}
+
+
+/* V48 — exam selector restoration + FAQs */
+.terrain-tabs{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.terrain-tabs button{
+  min-height:44px;
+  padding:0 14px;
+  border:1px solid #DDD6E0;
+  border-radius:999px;
+  background:#FFFFFF;
+  color:#6C626F;
+  font:inherit;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+  transition:background-color .18s ease,border-color .18s ease,color .18s ease;
+}
+.terrain-tabs button:hover{
+  border-color:#BDAFC5;
+}
+.terrain-tabs button[aria-pressed="true"]{
+  border-color:var(--purple);
+  background:var(--purple);
+  color:#FFFFFF;
+}
+.fmge-view{
+  display:block;
+  min-height:250px;
+  padding:24px 0;
+}
+.fmge-mode-note{
+  max-width:620px;
+  margin:34px auto;
+  padding:28px;
+  border:1px solid #E4DDE7;
+  border-radius:16px;
+  background:#FFFFFF;
+  text-align:left;
+}
+.fmge-mode-note strong{
+  display:block;
+  color:var(--purple-ink);
+  font-size:20px;
+  line-height:1.25;
+}
+.fmge-mode-note p{
+  margin:12px 0 0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.65;
+}
+.fmge-mode-note span{
+  display:block;
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  color:#786D7B;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* FAQ */
+.faq-wrap{
+  display:grid;
+  grid-template-columns:.72fr 1.28fr;
+  gap:44px;
+  align-items:start;
+}
+.faq-head{
+  position:sticky;
+  top:112px;
+}
+.faq-head h2{
+  margin:0;
+  max-width:9ch;
+}
+.faq-head p{
+  margin:16px 0 0;
+  max-width:34ch;
+  color:rgba(255,255,255,.76);
+  font-size:15px;
+  line-height:1.65;
+}
+.faq-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.faq-list details{
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:16px;
+  background:rgba(255,255,255,.075);
+  overflow:hidden;
+}
+.faq-list summary{
+  position:relative;
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  padding:16px 52px 16px 20px;
+  color:#FFFFFF;
+  font-size:16px;
+  line-height:1.35;
+  font-weight:700;
+  cursor:pointer;
+  list-style:none;
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{
+  content:"+";
+  position:absolute;
+  right:20px;
+  top:50%;
+  transform:translateY(-50%);
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:50%;
+  color:#FFD8C4;
+  font-size:20px;
+  line-height:1;
+  font-weight:500;
+}
+.faq-list details[open] summary::after{
+  content:"−";
+}
+.faq-list details[open] summary{
+  padding-bottom:12px;
+}
+.faq-list details p{
+  margin:0;
+  padding:0 52px 20px 20px;
+  color:rgba(255,255,255,.76);
+  font-size:14px;
+  line-height:1.68;
+  max-width:72ch;
+}
+.faq-list details:focus-within{
+  border-color:rgba(255,226,200,.52);
+}
+.faq-list summary:focus-visible{
+  outline:3px solid #FFE2C8;
+  outline-offset:-3px;
+}
+
+@media(max-width:980px){
+  .faq-wrap{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+  .faq-head{
+    position:static;
+  }
+  .faq-head h2{
+    max-width:none;
+  }
+}
+@media(max-width:700px){
+  .terrain-tabs{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    width:100%;
+  }
+  .terrain-tabs button{
+    width:100%;
+    min-width:0;
+    padding:0 8px;
+  }
+  .fmge-mode-note{
+    margin:12px 0;
+    padding:20px;
+  }
+  .faq-wrap{
+    gap:20px;
+  }
+  .faq-list summary{
+    min-height:60px;
+    padding:14px 48px 14px 16px;
+    font-size:15px;
+  }
+  .faq-list summary::after{
+    right:16px;
+  }
+  .faq-list details p{
+    padding:0 48px 18px 16px;
+    font-size:14px;
+  }
+}
+
+
+/* V50 — restore approved "Use NeuroFlip if" intro card only */
+#for-you .for-you-pills{
+  display:flex!important;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:24px;
+}
+#for-you .for-you-pills span{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:0 12px;
+  border:1px solid #E5D6C8;
+  border-radius:999px;
+  background:#F8F2EC;
+  color:#6A5A55;
+  font-size:12px;
+  line-height:1;
+  font-weight:700;
+  white-space:nowrap;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
+}
+@media(max-width:700px){
+  #for-you .for-you-pills{
+    gap:8px;
+    margin-top:22px;
+  }
+  #for-you .for-you-pills span{
+    min-height:34px;
+    font-size:11px;
+  }
+}
+
+
+
+/* V58 — latest NeuroFlip typography authority + hero rhythm repair
+   Authority: Fraunces 600 = major DISPLAY/STORY/HERO_HEADLINE;
+   Manrope 400/500/600/700 = PRODUCT/UI/body/navigation/CTA/controls/metadata. */
+body{
+  font-family:Manrope,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  text-rendering:optimizeLegibility;
+}
+.hero h1{
+  max-width:920px;
+  margin:26px auto 22px;
+  font-family:"Fraunces",Georgia,serif;
+  font-optical-sizing:auto;
+  font-size:clamp(48px,4.6vw,64px);
+  line-height:1.04;
+  font-weight:600;
+  letter-spacing:-.02em;
+  text-wrap:balance;
+}
+.hero-exam-rotator{
+  min-width:7.4ch;
+  text-align:left;
+  vertical-align:baseline;
+}
+.hero-exam-rotator.is-static{
+  display:inline;
+  min-width:0;
+  text-align:inherit;
+  white-space:normal;
+}
+@media(max-width:700px){
+  .hero h1{
+    max-width:14ch;
+    margin:20px auto 18px;
+    font-size:clamp(38px,10.2vw,48px);
+    line-height:1.06;
+    letter-spacing:-.018em;
+  }
+}
+@media(max-width:359px){
+  .hero h1{font-size:36px}
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand" aria-label="Neuroflip home"><img width="28" height="36" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjMiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA2MyA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYwLjgzMyAyNi43NDY4QzYwLjQyNzQgMjcuMzA1NiA2MC4wMjE4IDI3Ljg2NDUgNTkuNTM1IDI4LjM0MzVDNTcuMTAxMiAzMS4xMzc5IDUzLjkzNzIgMzMuMDU0IDUwLjQ0ODggMzQuMDkxOUw0Ny42OTA1IDM0LjczMDdMNDcuMzY2IDM0LjgxMDVMMjEuNjQ4NyA0MC42Mzg3TDE3LjAyNDQgNDEuNjc2NkMxOS4zNzcxIDQxLjExNzggMjEuNDg2NCAzOS43NjA1IDIzLjAyNzggMzcuODQ0NEMyMy40MzM1IDM3LjM2NTMgMjMuODM5MSAzNi44MDY1IDI0LjE2MzYgMzYuMTY3OEMyNC40ODgxIDM1LjYwODkgMjQuNzMxNSAzNC45NzAyIDI0Ljk3NDkgMzQuMzMxNUMyNS44NjczIDMxLjY5NjggMjUuNzg2MSAyOC45MDI0IDI0LjgxMjYgMjYuNTA3MkMyNC43MzE1IDI2LjQyNzQgMjQuNzMxNSAyNi4yNjc3IDI0LjY1MDQgMjYuMTg3OUMyMi44NjU2IDIxLjYzNzEgMjIuNzg0NCAxNi40NDc1IDI0LjgxMjYgMTEuNjU3MkMyNS4wNTYgMTEuMDE4NSAyNS4zODA1IDEwLjQ1OTYgMjUuNzA1IDkuODIwOUMyNi4wMjk1IDkuMjYyMDMgMjYuMzU0IDguNzAzMTYgMjYuNzU5NyA4LjE0NDI5QzMyLjYwMDggMC4yNDAyMyA0My41NTMgLTIuMzk0NDYgNTIuMzk1OCAyLjM5NTg4QzYxLjE1NzYgNy4xODYyMiA2NC43MjcxIDE3LjgwNDggNjAuODMzIDI2Ljc0NjhaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfMjM0XzQ4NjEpIi8+CjxwYXRoIGQ9Ik01OS45NDEyIDI4LjUwMzNDNTkuNjE2NiAyOS4wNjIyIDU5LjIxMSAyOS43MDA5IDU4Ljg4NjUgMzAuMTc5OUM1OC4yMzc1IDMxLjA1ODEgNTcuNTA3MyAzMS45MzY0IDU2Ljc3NzIgMzIuNzM0N0M1My45Mzc4IDM1LjUyOTEgNTAuMjg3IDM3LjQ0NTIgNDYuMzkyOSAzOC4wODRDNDYuMzExOCAzOC4wODQgNDYuMjMwNyAzOC4wODQgNDYuMTQ5NiAzOC4xNjM4QzQ1Ljc0MzkgMzguMjQzNiA0NS4zMzgzIDM4LjMyMzUgNDQuOTMyNiAzOC40ODMyTDQwLjcxNCAzOS40NDEyTDE1Ljg4OTEgNDUuMTA5OEwxMy41MzY1IDQ1LjY2ODdMMTIuOTY4NiA0NS44MjgzQzkuMTU1NTkgNDYuNzg2NCA1LjU4NiA0OC44NjIyIDIuOTA4OCA1MS44OTYxQzIuNTAzMTcgNTIuMzc1MSAyLjAxNjQgNTIuOTM0IDEuNjkxODkgNTMuNDkyOUMxLjc3MzAyIDUyLjY5NDUgMi4wOTc1MyA1Mi4wNTU4IDIuNDIyMDQgNTEuNDk2OUMyLjc0NjU1IDUwLjkzOCAzLjA3MTA2IDUwLjM3OTIgMy40NzY2OSA0OS44MjAzQzQuMTI1NzEgNDguOTQyMSA0Ljc3NDcyIDQ4LjA2MzggNS41ODYgNDcuMzQ1M0M4LjQyNTQ0IDQ0LjU1MDkgMTEuOTk1IDQyLjYzNDggMTUuODg5MSA0MS45MTYyQzE1Ljg4OTEgNDEuOTE2MiAxNS44ODkxIDQxLjkxNjIgMTUuOTcwMyA0MS45MTYyQzE2LjEzMjUgNDEuOTE2MiAxNi4yOTQ4IDQxLjgzNjQgMTYuNDU3IDQxLjgzNjRDMTYuNjE5MyA0MS44MzY0IDE2Ljg2MjcgNDEuNzU2NSAxNy4wMjQ5IDQxLjY3NjdIMTcuMTA2TDIxLjczMDMgNDAuNjM4OEw0Ny40NDc2IDM0LjgxMDZMNDcuNzcyMSAzNC43MzA3TDUwLjUzMDQgMzQuMDkyQzUzLjkzNzggMzMuMDU0MSA1Ny4xMDE3IDMxLjA1ODEgNTkuNjE2NiAyOC4zNDM2QzYwLjEwMzQgMjcuODY0NiA2MC41MDkgMjcuMzA1NyA2MC45MTQ3IDI2Ljc0NjhDNjAuNTkwMiAyNy4zMDU3IDYwLjI2NTcgMjcuOTQ0NCA1OS45NDEyIDI4LjUwMzNaIiBmaWxsPSJ1cmwoI3BhaW50MV9saW5lYXJfMjM0XzQ4NjEpIi8+CjxwYXRoIGQ9Ik0zNi40OTU4IDcwLjA5OTNDMzYuMTcxMyA3MC42NTgxIDM1Ljc2NTcgNzEuMjk2OCAzNS40NDEyIDcxLjg1NTdDMjkuNzYyMyA3OS43NTk4IDE4LjgxMDEgODIuMzk0NSAxMC4wNDg0IDc3LjYwNDFDMS4yMDU1MiA3Mi43MzM5IC0yLjI4Mjk1IDYyLjE5NTIgMS41MzAwMiA1My4zMzMxQzEuOTM1NjYgNTIuNzc0MiAyLjM0MTMgNTIuMjk1MiAyLjc0NjkzIDUxLjczNjNDNS40MjQxMyA0OC43MDI0IDguOTkzNzIgNDYuNjI2NiAxMi44MDY3IDQ1LjY2ODVMMTMuMzc0NiA0NS41MDg5TDE1LjcyNzMgNDQuOTVMNDAuNTUyMiAzOS4yODE0TDQ0Ljc3MDggMzguMzIzNEM0Mi41ODAzIDM4Ljk2MjEgNDAuNjMzMyA0MC4yMzk1IDM5LjE3MyA0Mi4wNzU4QzM4Ljc2NzQgNDIuNTU0OCAzOC4zNjE3IDQzLjExMzcgMzguMDM3MiA0My43NTI0QzM3LjcxMjcgNDQuMzkxMSAzNy4zODgyIDQ0Ljk1IDM3LjIyNiA0NS41ODg3QzM2LjMzMzYgNDguMTQzNiAzNi40MTQ3IDUwLjg1ODEgMzcuMzg4MiA1My4yNTMyQzM3LjQ2OTMgNTMuNDEyOSAzNy41NTA1IDUzLjU3MjYgMzcuNTUwNSA1My43MzIzQzM5LjQxNjQgNTguMjgzMSAzOS40MTY0IDYzLjU1MjUgMzcuMzA3MSA2OC4zNDI4QzM3LjE0NDggNjguOTAxNyAzNi44MjAzIDY5LjU0MDQgMzYuNDk1OCA3MC4wOTkzWiIgZmlsbD0idXJsKCNwYWludDJfbGluZWFyXzIzNF80ODYxKSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzIzNF80ODYxIiB4MT0iMjcuMjU2NiIgeTE9IjQ2Ljg4MzciIHgyPSI2OS43MDg4IiB5Mj0iLTMwLjk0NjkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0id2hpdGUiLz4KPHN0b3Agb2Zmc2V0PSIwLjAwMjc0ODg0IiBzdG9wLWNvbG9yPSIjRjc5ODZBIi8+CjxzdG9wIG9mZnNldD0iMC4xMzQ2IiBzdG9wLWNvbG9yPSIjRjlCMDhCIi8+CjxzdG9wIG9mZnNldD0iMC4zMTM5IiBzdG9wLWNvbG9yPSIjRkNDREIzIi8+CjxzdG9wIG9mZnNldD0iMC40Nzg4IiBzdG9wLWNvbG9yPSIjRkRFMUNGIi8+CjxzdG9wIG9mZnNldD0iMC42MjI1IiBzdG9wLWNvbG9yPSIjRkZFRUUwIi8+CjxzdG9wIG9mZnNldD0iMC43MjkiIHN0b3AtY29sb3I9IiNGRkYyRTYiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDFfbGluZWFyXzIzNF80ODYxIiB4MT0iNjIuOTM2OCIgeTE9IjIxLjc3MjciIHgyPSI1LjE5NTI3IiB5Mj0iNTUuOTgyIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IndoaXRlIi8+CjxzdG9wIG9mZnNldD0iMC4wMDI3NDg4NCIgc3RvcC1jb2xvcj0iI0Y3OTg2QSIvPgo8c3RvcCBvZmZzZXQ9IjAuODQ0NyIgc3RvcC1jb2xvcj0iI0ZGRjJFNiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50Ml9saW5lYXJfMjM0XzQ4NjEiIHgxPSI0Ny40MDA4IiB5MT0iMzQuMDk1MyIgeDI9IjMuNDU4OCIgeTI9Ijc4Ljc0NjQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0id2hpdGUiLz4KPHN0b3Agb2Zmc2V0PSIwLjAwMjc0ODg0IiBzdG9wLWNvbG9yPSIjNUM0OTY2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0Y3OTg2QSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=" width="63" height="80" alt=""><span translate="no">Neuroflip</span></a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="#milestones">Milestones</a><a href="#for-you">Why NeuroFlip</a><a href="#testimonials">Testimonials</a><a href="#download" class="nav-action">Download NeuroFlip</a>
+      </nav>
+      <button type="button" class="menu" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+<main id="main">
+<div class="top" id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow hero-rank-badge" aria-label="Evidence-led revision for Medical PG">
+  <svg class="badge-sparkle" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.7c.7 4.8 3.5 7.6 8.3 8.3-4.8.7-7.6 3.5-8.3 8.3-.7-4.8-3.5-7.6-8.3-8.3C6.5 9.3 9.3 6.5 10 1.7Z" fill="currentColor"/></svg>
+  <span>Evidence-led revision for Medical PG</span>
+  <svg class="badge-sparkle" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.7c.7 4.8 3.5 7.6 8.3 8.3-4.8.7-7.6 3.5-8.3 8.3-.7-4.8-3.5-7.6-8.3-8.3C6.5 9.3 9.3 6.5 10 1.7Z" fill="currentColor"/></svg>
+</div>
+        <h1 aria-label="Not every topic matters equally in NEET-PG, INI-CET and FMGE.">Not every topic matters equally in <span class="hero-exam-rotator" id="heroExamRotator" aria-hidden="true">NEET-PG.</span></h1>
+        <p class="hero-lead">Past questions show a clear pattern: some topics are tested far more often than others. NeuroFlip ranks them by what each exam has actually tested, so you know where to start.</p>
+        <div class="hero-store-row" aria-label="Download Neuroflip">
+          <a class="hero-store" href="https://apps.apple.com/in/app/neuroflip-neet-pg-flashcards/id6474674721" aria-label="Download Neuroflip on the App Store">
+            <span class="store-brand-icon apple-mark" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M15.8 12.7c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.6.9-.7 0-1.8-.9-3-.9-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 6.9 1.1 9.2.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3.1-.7 1.4 0 1.8.7 3.1.7 1.3 0 2.1-1.1 2.8-2.2.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-1-2.5-3.3Z" fill="currentColor"/><path d="M13.4 5.5c.6-.8 1.1-1.9 1-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2-.5 2.7-1.2Z" fill="currentColor"/></svg>
+</span>
+            <span><small>Download on the</small><strong>App Store</strong></span>
+          </a>
+          <a class="hero-store" href="https://play.google.com/store/apps/details?id=com.neuroflip.neetpg" aria-label="Get Neuroflip on Google Play">
+            <span class="store-brand-icon play-mark" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none">
+    <path d="M3.3 3.1c-.2.3-.3.7-.3 1.2v15.4c0 .5.1.9.4 1.2L13 12 3.3 3.1Z" fill="#20C5F5"/>
+    <path d="M13 12 4.4 3.6c.4-.2.9-.1 1.4.2l10.1 5.8L13 12Z" fill="#34D058"/>
+    <path d="m13 12 2.9-2.4 3.5 2c.8.5.8 1.2 0 1.7l-3.4 2L13 12Z" fill="#FFCC3D"/>
+    <path d="m13 12 3 3.3-10.2 5.9c-.5.3-.9.3-1.3.1L13 12Z" fill="#F45164"/>
+  </svg>
+</span>
+            <span><small>Get it on</small><strong>Google Play</strong></span>
+          </a>
+        </div>
+        <!-- First-party social-proof snapshot: 93,674 registered students in the NeuroFlip student table, verified 2026-10-06. Display intentionally rounded to 93K+. -->
+        <div class="hero-social-proof">
+  <div class="proof-avatars" aria-hidden="true">
+    <span class="proof-avatar"><img src="https://neuroflip.com/assets/testimonial/1.jpeg" width="36" height="36" alt="" loading="eager" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><b hidden>AA</b></span>
+    <span class="proof-avatar"><img src="https://neuroflip.com/assets/testimonial/2.jpeg" width="36" height="36" alt="" loading="eager" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><b hidden>PG</b></span>
+    <span class="proof-avatar"><img src="https://neuroflip.com/assets/testimonial/3.jpeg" width="36" height="36" alt="" loading="eager" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><b hidden>GK</b></span>
+  </div>
+  <div>Used by <span>93K+ registered students</span></div>
+</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<section class="section truth-section" id="how-pyts"><div class="wrap">
+  <div class="section-head"><div><h2>How NeuroFlip decides what you should revise first.</h2></div><p>We map past exam questions to 1,619 topics, rank those topics for each exam, and turn that order into 10 clear revision milestones.</p></div>
+  <div class="pyt-pipeline" aria-label="How Neuroflip decides Previous Year Topics">
+    <article class="pyt-stage">
+      <div class="pyt-step">Step 01 · Map</div>
+      <div class="pyt-metric">15,443</div>
+      <h3>Past-question records mapped</h3>
+      <p>Each record is linked to one of 1,619 topics.</p>
+      <div class="pyt-breakdown">4,143 NEET-PG · 4,715 INI-CET · 6,585 FMGE</div>
+    </article>
+    <article class="pyt-stage">
+      <div class="pyt-step">Step 02 · Rank</div>
+      <div class="pyt-metric">1,619</div>
+      <h3>Topics ranked</h3>
+      <p>Topics with more support from past questions come first.</p>
+      <div class="pyt-breakdown">Helps you prioritize. Does not predict the next exam.</div>
+    </article>
+    <article class="pyt-stage">
+      <div class="pyt-step">Step 03 · Milestones</div>
+      <div class="pyt-metric">10</div>
+      <h3>Ranked topics become 10 milestones</h3>
+      <p>Each milestone adds another 10% of what past questions have tested. For NEET-PG, M7 has 452 topics and M10 has all 1,162 topics found in the current past-question data.</p>
+      <div class="pyt-breakdown milestone-summary" aria-label="Exam coverage landmarks">
+  <span>Past-question coverage</span>
+  <strong>M1 · 10%</strong>
+  <strong>M5 · Halfway</strong>
+  <strong>M10 · 100%</strong>
+</div>
+    </article>
+  </div>
+  <div class="pyt-boundary">FMGE has its own 10-milestone path built only from FMGE past-question data. It is not mixed with NEET-PG or INI-CET.</div>
+</div></section>
+
+<section class="section alt" id="milestones"><div class="wrap">
+  <div class="section-head"><div><h2>Start with the topics past questions have tested most.</h2></div><p>Each exam has a different pattern. Pick your exam to see how many topics you need at each milestone.</p></div>
+  <div class="terrain">
+    <div class="terrain-top">
+  <div class="terrain-title">
+    <strong id="terrainTitle">Topics needed at each milestone</strong>
+    <span id="terrainSubtitle">NEET-PG · 10 milestones · total topics so far</span>
+  </div>
+  <div class="terrain-tabs" aria-label="Exam target">
+    <button type="button" aria-pressed="true" data-mode="NEET_PG">NEET-PG</button>
+    <button type="button" aria-pressed="false" data-mode="INI_CET">INI-CET</button>
+    <button type="button" aria-pressed="false" data-mode="FMGE">FMGE</button>
+  </div>
+</div>
+    <div class="terrain-grid">
+      <div class="curve-area"><div class="axis-label"><span>Fewer topics</span><span>More topics</span></div><div class="curve" id="curve"></div></div>
+      <aside class="terrain-side" aria-live="polite"><div><div class="side-big" id="sidePercent">10%</div><h3 id="sideTitle">Start with 29 topics.</h3><p id="sideCopy">These 29 topics cover the first 10% of what past NEET-PG questions have tested.</p><div class="side-stats" id="sideStats"><div class="side-chip"><strong id="sideCumulative">29</strong><span id="sideCumulativeLabel">topics to revise</span></div><div class="side-chip"><strong id="sideNew">10%</strong><span id="sideNewLabel">of past questions covered</span></div></div></div><div class="side-actions"><div class="side-rule" id="sideRule">Milestone 1 covers the first 10% of what past NEET-PG questions have tested.</div><a class="side-cta" id="sideCta" href="#download">Start Milestone 1</a><div class="side-note" id="sideNote">Open NeuroFlip and start with Milestone 1.</div></div></aside>
+    </div>
+  </div>
+</div></section>
+
+<section class="section alt" id="for-you"><div class="wrap"><div class="for-you-shell"><div class="for-you-grid">
+  <div class="for-you-copy">
+    <div class="for-you-copy-card">
+      <h2>Use NeuroFlip if…</h2>
+      <p>You know you need to revise, but you are not sure what to do first. NeuroFlip turns a huge syllabus into a clear next step.</p>
+      <div class="for-you-pills">
+        <span>Syllabus feels too big</span>
+        <span>Too many “high-yield” lists</span>
+        <span>Not sure what to revise next</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pain-grid">
+    <article class="pain-card">
+      <h3>You’re worried you won’t finish the syllabus in time.</h3>
+    </article>
+
+    <article class="pain-card">
+      <h3>Different “high-yield” lists tell you different things.</h3>
+    </article>
+
+    <article class="pain-card">
+      <h3>Your GT scores are low or stuck.</h3>
+    </article>
+
+    <article class="pain-card">
+      <h3>You sit down to revise but still don’t know where to start.</h3>
+    </article>
+
+    <article class="pain-card">
+      <h3>Everything feels important, so your revision list keeps growing.</h3>
+    </article>
+
+    <article class="pain-card">
+      <h3>You spend more time planning than revising.</h3>
+    </article>
+
+    <article class="pain-card">
+      <h3>You’ve studied a lot, but you still forget what you learned.</h3>
+    </article>
+
+    <article class="pain-card">
+      <h3>The exam is close, and you need a plan you can actually finish.</h3>
+    </article>
+
+    <div class="for-you-cta">
+      <div><strong>Sound familiar?</strong><span>Start with Milestone 1 instead of restarting the whole syllabus.</span></div>
+      <a href="#download">Start Milestone 1</a>
+    </div>
+  </div>
+</div></div></div></section>
+
+
+<section class="section alt" id="testimonials"><div class="wrap">
+  <div class="testimonial-head">
+    <div>
+      <div class="kicker">Learner stories</div>
+      <h2>What learners say about NeuroFlip.</h2>
+    </div>
+    <p>Feedback from NeuroFlip users preparing for NEET-PG and FMGE.</p>
+  </div>
+
+  <div class="testimonial-grid">
+    <article class="testimonial-card">
+      <div class="testimonial-person">
+        <span class="testimonial-avatar"><img src="https://neuroflip.com/assets/testimonial/1.jpeg" alt="Dr. Ayan Agrawal" width="52" height="52" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><b hidden aria-hidden="true">AA</b></span>
+        <div><strong>Dr. Ayan Agrawal</strong><span>AIR 132</span></div>
+      </div>
+      <p class="testimonial-quote">“NeuroFlip transformed my study approach. Active recall and spaced repetition helped me master key topics. The flashcards were precise, covering everything essential for NEET PG success.”</p>
+      <div class="testimonial-foot">NEET-PG learner feedback</div>
+    </article>
+
+    <article class="testimonial-card">
+      <div class="testimonial-person">
+        <span class="testimonial-avatar"><img src="https://neuroflip.com/assets/testimonial/2.jpeg" alt="Dr. Pratha Gupta" width="52" height="52" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><b hidden aria-hidden="true">PG</b></span>
+        <div><strong>Dr. Pratha Gupta</strong><span>NEET 500</span></div>
+      </div>
+      <p class="testimonial-quote">“Managing multiple resources was tough until I found NeuroFlip. It simplified revision, keeping everything structured. The interactive format kept me engaged and improved my retention.”</p>
+      <div class="testimonial-foot">NEET-PG learner feedback</div>
+    </article>
+
+    <article class="testimonial-card">
+      <div class="testimonial-person">
+        <span class="testimonial-avatar"><img src="https://neuroflip.com/assets/testimonial/3.jpeg" alt="Dr. Gunal Kamal" width="52" height="52" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><b hidden aria-hidden="true">GK</b></span>
+        <div><strong>Dr. Gunal Kamal</strong><span>FMGE pass</span></div>
+      </div>
+      <p class="testimonial-quote">“Cramming was stressful, but NeuroFlip changed that. The strategic approach strengthened weak areas, boosting my confidence before the fmge exam. It is must for every FMGE aspirants.”</p>
+      <div class="testimonial-foot">FMGE learner feedback</div>
+    </article>
+  </div>
+
+  <div class="testimonial-proof">These testimonials come from learner feedback already published by NeuroFlip.</div>
+</div></section>
+
+
+
+<section class="close" id="download"><div class="wrap"><div class="close-card">
+  <div class="close-copy">
+    <h2>Used by 93K+ registered students.</h2>
+    <p>Start with one clear target, not the whole syllabus. NeuroFlip uses past questions to build 10 milestones, so you know what to revise next.</p>
+  </div>
+
+  <div class="close-actions">
+    <div class="close-actions-title">Start Milestone 1</div>
+    <div class="close-actions-copy">Download NeuroFlip and start with your first set of topics.</div>
+
+    <div class="store-row" aria-label="Download Neuroflip">
+      <a class="store" href="https://apps.apple.com/in/app/neuroflip-neet-pg-flashcards/id6474674721" aria-label="Download Neuroflip on the App Store">
+        <span class="store-brand-icon apple-mark" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M15.8 12.7c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.6.9-.7 0-1.8-.9-3-.9-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 6.9 1.1 9.2.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3.1-.7 1.4 0 1.8.7 3.1.7 1.3 0 2.1-1.1 2.8-2.2.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-1-2.5-3.3Z" fill="currentColor"/><path d="M13.4 5.5c.6-.8 1.1-1.9 1-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2-.5 2.7-1.2Z" fill="currentColor"/></svg>
+</span>
+        <span><small>Download on the</small><strong>App Store</strong></span>
+      </a>
+
+      <a class="store" href="https://play.google.com/store/apps/details?id=com.neuroflip.neetpg" aria-label="Get Neuroflip on Google Play">
+        <span class="store-brand-icon play-mark" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none">
+    <path d="M3.3 3.1c-.2.3-.3.7-.3 1.2v15.4c0 .5.1.9.4 1.2L13 12 3.3 3.1Z" fill="#20C5F5"/>
+    <path d="M13 12 4.4 3.6c.4-.2.9-.1 1.4.2l10.1 5.8L13 12Z" fill="#34D058"/>
+    <path d="m13 12 2.9-2.4 3.5 2c.8.5.8 1.2 0 1.7l-3.4 2L13 12Z" fill="#FFCC3D"/>
+    <path d="m13 12 3 3.3-10.2 5.9c-.5.3-.9.3-1.3.1L13 12Z" fill="#F45164"/>
+  </svg>
+</span>
+        <span><small>Get it on</small><strong>Google Play</strong></span>
+      </a>
+    </div>
+    <div class="close-platform-note">Available on iOS and Android.</div>
+  </div>
+</div></div></section>
+
+<section class="section alt" id="faqs"><div class="wrap faq-wrap">
+  <div class="faq-head">
+    <h2>Frequently asked questions.</h2>
+    <p>Simple answers about Previous Year Topics (PYTs), milestones, and how NeuroFlip uses past exam questions.</p>
+  </div>
+
+  <div class="faq-list">
+    <details>
+      <summary>What is a PYT?</summary>
+      <p>PYT means Previous Year Topic. It is a topic connected to past exam questions. NeuroFlip uses that past-question history to help decide what you should revise first.</p>
+    </details>
+
+    <details>
+      <summary>How does NeuroFlip decide what I should revise first?</summary>
+      <p>We map past exam questions to 1,619 Medical-PG topics. For each exam, topics with more support from past questions come first. Then we group them into 10 milestones.</p>
+    </details>
+
+    <details>
+      <summary>Are the NEET-PG, INI-CET and FMGE rankings the same?</summary>
+      <p>No. NEET-PG, INI-CET, and FMGE each use their own past-question data, so the topic order can change from one exam to another.</p>
+    </details>
+
+    <details>
+      <summary>How were the FMGE milestones calculated?</summary>
+      <p>FMGE uses 6,585 mapped past-question records across 1,240 topics. NeuroFlip ranks those topics using FMGE data only, while making sure all 19 subjects are represented from Milestone 1. Each milestone adds another 10% of what past FMGE questions have tested.</p>
+    </details>
+
+    <details>
+      <summary>What does a milestone percentage mean?</summary>
+      <p>It shows how much of what past questions have tested is covered by the topics in that milestone. It does not mean a topic has the same chance of appearing in the next exam.</p>
+    </details>
+
+    <details>
+      <summary>Does completing the final milestone mean I have finished the full syllabus?</summary>
+      <p>No. Milestone 10 covers all topics found in the past-question data for that exam. The full Medical-PG syllabus has 1,619 topics, including topics not seen in that exam’s current past-question data.</p>
+    </details>
+
+    <details>
+      <summary>What if I forget a Topic after completing a milestone?</summary>
+      <p>Completing a milestone means you finished that set once. If a topic becomes due again, feels weak, or you miss it, it can return for review.</p>
+    </details>
+
+    <details>
+      <summary>Does NeuroFlip replace notes, videos or GTs?</summary>
+      <p>No. NeuroFlip helps you decide what to revise first and what to review next. Keep using your main notes, question practice, and GTs for full exam prep.</p>
+    </details>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap footer-grid"><div class="footer-brand"><img width="23" height="29" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjMiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA2MyA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYwLjgzMyAyNi43NDY4QzYwLjQyNzQgMjcuMzA1NiA2MC4wMjE4IDI3Ljg2NDUgNTkuNTM1IDI4LjM0MzVDNTcuMTAxMiAzMS4xMzc5IDUzLjkzNzIgMzMuMDU0IDUwLjQ0ODggMzQuMDkxOUw0Ny42OTA1IDM0LjczMDdMNDcuMzY2IDM0LjgxMDVMMjEuNjQ4NyA0MC42Mzg3TDE3LjAyNDQgNDEuNjc2NkMxOS4zNzcxIDQxLjExNzggMjEuNDg2NCAzOS43NjA1IDIzLjAyNzggMzcuODQ0NEMyMy40MzM1IDM3LjM2NTMgMjMuODM5MSAzNi44MDY1IDI0LjE2MzYgMzYuMTY3OEMyNC40ODgxIDM1LjYwODkgMjQuNzMxNSAzNC45NzAyIDI0Ljk3NDkgMzQuMzMxNUMyNS44NjczIDMxLjY5NjggMjUuNzg2MSAyOC45MDI0IDI0LjgxMjYgMjYuNTA3MkMyNC43MzE1IDI2LjQyNzQgMjQuNzMxNSAyNi4yNjc3IDI0LjY1MDQgMjYuMTg3OUMyMi44NjU2IDIxLjYzNzEgMjIuNzg0NCAxNi40NDc1IDI0LjgxMjYgMTEuNjU3MkMyNS4wNTYgMTEuMDE4NSAyNS4zODA1IDEwLjQ1OTYgMjUuNzA1IDkuODIwOUMyNi4wMjk1IDkuMjYyMDMgMjYuMzU0IDguNzAzMTYgMjYuNzU5NyA4LjE0NDI5QzMyLjYwMDggMC4yNDAyMyA0My41NTMgLTIuMzk0NDYgNTIuMzk1OCAyLjM5NTg4QzYxLjE1NzYgNy4xODYyMiA2NC43MjcxIDE3LjgwNDggNjAuODMzIDI2Ljc0NjhaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfMjM0XzQ4NjEpIi8+CjxwYXRoIGQ9Ik01OS45NDEyIDI4LjUwMzNDNTkuNjE2NiAyOS4wNjIyIDU5LjIxMSAyOS43MDA5IDU4Ljg4NjUgMzAuMTc5OUM1OC4yMzc1IDMxLjA1ODEgNTcuNTA3MyAzMS45MzY0IDU2Ljc3NzIgMzIuNzM0N0M1My45Mzc4IDM1LjUyOTEgNTAuMjg3IDM3LjQ0NTIgNDYuMzkyOSAzOC4wODRDNDYuMzExOCAzOC4wODQgNDYuMjMwNyAzOC4wODQgNDYuMTQ5NiAzOC4xNjM4QzQ1Ljc0MzkgMzguMjQzNiA0NS4zMzgzIDM4LjMyMzUgNDQuOTMyNiAzOC40ODMyTDQwLjcxNCAzOS40NDEyTDE1Ljg4OTEgNDUuMTA5OEwxMy41MzY1IDQ1LjY2ODdMMTIuOTY4NiA0NS44MjgzQzkuMTU1NTkgNDYuNzg2NCA1LjU4NiA0OC44NjIyIDIuOTA4OCA1MS44OTYxQzIuNTAzMTcgNTIuMzc1MSAyLjAxNjQgNTIuOTM0IDEuNjkxODkgNTMuNDkyOUMxLjc3MzAyIDUyLjY5NDUgMi4wOTc1MyA1Mi4wNTU4IDIuNDIyMDQgNTEuNDk2OUMyLjc0NjU1IDUwLjkzOCAzLjA3MTA2IDUwLjM3OTIgMy40NzY2OSA0OS44MjAzQzQuMTI1NzEgNDguOTQyMSA0Ljc3NDcyIDQ4LjA2MzggNS41ODYgNDcuMzQ1M0M4LjQyNTQ0IDQ0LjU1MDkgMTEuOTk1IDQyLjYzNDggMTUuODg5MSA0MS45MTYyQzE1Ljg4OTEgNDEuOTE2MiAxNS44ODkxIDQxLjkxNjIgMTUuOTcwMyA0MS45MTYyQzE2LjEzMjUgNDEuOTE2MiAxNi4yOTQ4IDQxLjgzNjQgMTYuNDU3IDQxLjgzNjRDMTYuNjE5MyA0MS44MzY0IDE2Ljg2MjcgNDEuNzU2NSAxNy4wMjQ5IDQxLjY3NjdIMTcuMTA2TDIxLjczMDMgNDAuNjM4OEw0Ny40NDc2IDM0LjgxMDZMNDcuNzcyMSAzNC43MzA3TDUwLjUzMDQgMzQuMDkyQzUzLjkzNzggMzMuMDU0MSA1Ny4xMDE3IDMxLjA1ODEgNTkuNjE2NiAyOC4zNDM2QzYwLjEwMzQgMjcuODY0NiA2MC41MDkgMjcuMzA1NyA2MC45MTQ3IDI2Ljc0NjhDNjAuNTkwMiAyNy4zMDU3IDYwLjI2NTcgMjcuOTQ0NCA1OS45NDEyIDI4LjUwMzNaIiBmaWxsPSJ1cmwoI3BhaW50MV9saW5lYXJfMjM0XzQ4NjEpIi8+CjxwYXRoIGQ9Ik0zNi40OTU4IDcwLjA5OTNDMzYuMTcxMyA3MC42NTgxIDM1Ljc2NTcgNzEuMjk2OCAzNS40NDEyIDcxLjg1NTdDMjkuNzYyMyA3OS43NTk4IDE4LjgxMDEgODIuMzk0NSAxMC4wNDg0IDc3LjYwNDFDMS4yMDU1MiA3Mi43MzM5IC0yLjI4Mjk1IDYyLjE5NTIgMS41MzAwMiA1My4zMzMxQzEuOTM1NjYgNTIuNzc0MiAyLjM0MTMgNTIuMjk1MiAyLjc0NjkzIDUxLjczNjNDNS40MjQxMyA0OC43MDI0IDguOTkzNzIgNDYuNjI2NiAxMi44MDY3IDQ1LjY2ODVMMTMuMzc0NiA0NS41MDg5TDE1LjcyNzMgNDQuOTVMNDAuNTUyMiAzOS4yODE0TDQ0Ljc3MDggMzguMzIzNEM0Mi41ODAzIDM4Ljk2MjEgNDAuNjMzMyA0MC4yMzk1IDM5LjE3MyA0Mi4wNzU4QzM4Ljc2NzQgNDIuNTU0OCAzOC4zNjE3IDQzLjExMzcgMzguMDM3MiA0My43NTI0QzM3LjcxMjcgNDQuMzkxMSAzNy4zODgyIDQ0Ljk1IDM3LjIyNiA0NS41ODg3QzM2LjMzMzYgNDguMTQzNiAzNi40MTQ3IDUwLjg1ODEgMzcuMzg4MiA1My4yNTMyQzM3LjQ2OTMgNTMuNDEyOSAzNy41NTA1IDUzLjU3MjYgMzcuNTUwNSA1My43MzIzQzM5LjQxNjQgNTguMjgzMSAzOS40MTY0IDYzLjU1MjUgMzcuMzA3MSA2OC4zNDI4QzM3LjE0NDggNjguOTAxNyAzNi44MjAzIDY5LjU0MDQgMzYuNDk1OCA3MC4wOTkzWiIgZmlsbD0idXJsKCNwYWludDJfbGluZWFyXzIzNF80ODYxKSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzIzNF80ODYxIiB4MT0iMjcuMjU2NiIgeTE9IjQ2Ljg4MzciIHgyPSI2OS43MDg4IiB5Mj0iLTMwLjk0NjkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0id2hpdGUiLz4KPHN0b3Agb2Zmc2V0PSIwLjAwMjc0ODg0IiBzdG9wLWNvbG9yPSIjRjc5ODZBIi8+CjxzdG9wIG9mZnNldD0iMC4xMzQ2IiBzdG9wLWNvbG9yPSIjRjlCMDhCIi8+CjxzdG9wIG9mZnNldD0iMC4zMTM5IiBzdG9wLWNvbG9yPSIjRkNDREIzIi8+CjxzdG9wIG9mZnNldD0iMC40Nzg4IiBzdG9wLWNvbG9yPSIjRkRFMUNGIi8+CjxzdG9wIG9mZnNldD0iMC42MjI1IiBzdG9wLWNvbG9yPSIjRkZFRUUwIi8+CjxzdG9wIG9mZnNldD0iMC43MjkiIHN0b3AtY29sb3I9IiNGRkYyRTYiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDFfbGluZWFyXzIzNF80ODYxIiB4MT0iNjIuOTM2OCIgeTE9IjIxLjc3MjciIHgyPSI1LjE5NTI3IiB5Mj0iNTUuOTgyIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IndoaXRlIi8+CjxzdG9wIG9mZnNldD0iMC4wMDI3NDg4NCIgc3RvcC1jb2xvcj0iI0Y3OTg2QSIvPgo8c3RvcCBvZmZzZXQ9IjAuODQ0NyIgc3RvcC1jb2xvcj0iI0ZGRjJFNiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50Ml9saW5lYXJfMjM0XzQ4NjEiIHgxPSI0Ny40MDA4IiB5MT0iMzQuMDk1MyIgeDI9IjMuNDU4OCIgeTI9Ijc4Ljc0NjQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0id2hpdGUiLz4KPHN0b3Agb2Zmc2V0PSIwLjAwMjc0ODg0IiBzdG9wLWNvbG9yPSIjNUM0OTY2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0Y3OTg2QSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=" width="63" height="80" alt=""><span translate="no">Neuroflip</span></div><div class="footer-links"><a href="#milestones">Milestones</a><a href="#for-you">Why NeuroFlip</a><a href="#testimonials">Testimonials</a><a href="#faqs">FAQs</a></div><div class="footer-note">Past exam questions help set revision priority. They do not predict the next paper or replace full-syllabus study.</div></div></footer>
+<script>
+const HERO_EXAMS=['NEET-PG.','INI-CET.','FMGE.'];
+const heroExamRotator=document.getElementById('heroExamRotator');
+if(heroExamRotator){
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduceMotion){
+    heroExamRotator.textContent='NEET-PG, INI-CET & FMGE.';
+    heroExamRotator.classList.add('is-static');
+  }else{
+    let heroExamIndex=0;
+    let heroExamChanges=0;
+    const heroExamTimer=window.setInterval(()=>{
+      heroExamRotator.classList.add('is-changing');
+      window.setTimeout(()=>{
+        heroExamIndex+=1;
+        heroExamRotator.textContent=HERO_EXAMS[heroExamIndex];
+        heroExamRotator.classList.remove('is-changing');
+        heroExamChanges+=1;
+        if(heroExamChanges>=2) window.clearInterval(heroExamTimer);
+      },180);
+    },2200);
+  }
+}
+
+const EXAM_DATA={
+  NEET_PG:{
+    label:'NEET-PG',
+    subtitle:'NEET-PG · 10 milestones · total topics so far',
+    rows:[
+      ['10%','29','29'],['20%','67','38'],['30%','118','51'],['40%','181','63'],['50%','258','77'],
+      ['60%','348','90'],['70%','452','104'],['80%','590','138'],['90%','790','200'],['100%','1162','372']
+    ],
+    copy:[
+      ['10%','Start with 29 topics.','These 29 topics cover the first 10% of what past NEET-PG questions have tested.'],
+      ['20%','Add 38 topics to reach 20%.','Your revision set now has 67 topics.'],
+      ['30%','Add 51 topics to reach 30%.','Your revision set now has 118 topics.'],
+      ['40%','Add 63 topics to reach 40%.','Your revision set now has 181 topics.'],
+      ['50%','Add 77 topics to reach halfway.','Your revision set now has 258 topics.'],
+      ['60%','Add 90 topics to reach 60%.','Your revision set now has 348 topics.'],
+      ['70%','Add 104 topics to reach 70%.','Your revision set now has 452 topics.'],
+      ['80%','Add 138 topics to reach 80%.','Your revision set now has 590 topics.'],
+      ['90%','Add 200 topics to reach 90%.','Your revision set now has 790 topics.'],
+      ['100%','Finish the full past-question set with 1,162 topics.','These are all topics found in the current NEET-PG past-question data.']
+    ]
+  },
+  INI_CET:{
+    label:'INI-CET',
+    subtitle:'INI-CET · 10 milestones · total topics so far',
+    rows:[
+      ['10%','35','35'],['20%','81','46'],['30%','136','55'],['40%','204','68'],['50%','286','82'],
+      ['60%','386','100'],['70%','511','125'],['80%','655','144'],['90%','844','189'],['100%','1142','298']
+    ],
+    copy:[
+      ['10%','Start with 35 topics.','These 35 topics cover the first 10% of what past INI-CET questions have tested.'],
+      ['20%','Add 46 topics to reach 20%.','Your revision set now has 81 topics.'],
+      ['30%','Add 55 topics to reach 30%.','Your revision set now has 136 topics.'],
+      ['40%','Add 68 topics to reach 40%.','Your revision set now has 204 topics.'],
+      ['50%','Add 82 topics to reach halfway.','Your revision set now has 286 topics.'],
+      ['60%','Add 100 topics to reach 60%.','Your revision set now has 386 topics.'],
+      ['70%','Add 125 topics to reach 70%.','Your revision set now has 511 topics.'],
+      ['80%','Add 144 topics to reach 80%.','Your revision set now has 655 topics.'],
+      ['90%','Add 189 topics to reach 90%.','Your revision set now has 844 topics.'],
+      ['100%','Finish the full past-question set with 1,142 topics.','These are all topics found in the current INI-CET past-question data.']
+    ]
+  },
+  FMGE:{
+    label:'FMGE',
+    subtitle:'FMGE · 10 milestones · total topics so far',
+    rows:[
+      ['10%','38','38'],['20%','86','48'],['30%','142','56'],['40%','206','64'],['50%','287','81'],
+      ['60%','379','92'],['70%','491','112'],['80%','634','143'],['90%','833','199'],['100%','1240','407']
+    ],
+    copy:[
+      ['10%','Start with 38 topics.','These 38 topics cover the first 10% of what past FMGE questions have tested.'],
+      ['20%','Add 48 topics to reach 20%.','Your revision set now has 86 topics.'],
+      ['30%','Add 56 topics to reach 30%.','Your revision set now has 142 topics.'],
+      ['40%','Add 64 topics to reach 40%.','Your revision set now has 206 topics.'],
+      ['50%','Add 81 topics to reach halfway.','Your revision set now has 287 topics.'],
+      ['60%','Add 92 topics to reach 60%.','Your revision set now has 379 topics.'],
+      ['70%','Add 112 topics to reach 70%.','Your revision set now has 491 topics.'],
+      ['80%','Add 143 topics to reach 80%.','Your revision set now has 634 topics.'],
+      ['90%','Add 199 topics to reach 90%.','Your revision set now has 833 topics.'],
+      ['100%','Finish the full past-question set with 1,240 topics.','These are all topics found in the current FMGE past-question data.']
+    ]
+  }
+};
+
+function renderExam(mode){
+  const curve=document.getElementById('curve');
+  const axis=document.querySelector('.axis-label');
+  const terrainTitle=document.getElementById('terrainTitle');
+  const terrainSubtitle=document.getElementById('terrainSubtitle');
+  const sidePct=document.getElementById('sidePercent');
+  const sideTitle=document.getElementById('sideTitle');
+  const sideCopy=document.getElementById('sideCopy');
+  const sideRule=document.getElementById('sideRule');
+  const sideStats=document.getElementById('sideStats');
+  const sideCumulative=document.getElementById('sideCumulative');
+  const sideNew=document.getElementById('sideNew');
+  const sideCumulativeLabel=document.getElementById('sideCumulativeLabel');
+  const sideNewLabel=document.getElementById('sideNewLabel');
+  const sideCta=document.getElementById('sideCta');
+  const sideNote=document.getElementById('sideNote');
+
+  document.querySelectorAll('.terrain-tabs button').forEach(btn=>{
+    btn.setAttribute('aria-pressed',String(btn.dataset.mode===mode));
+  });
+
+  terrainTitle.textContent='Topics needed at each milestone';
+
+
+  const data=EXAM_DATA[mode];
+  terrainSubtitle.textContent=data.subtitle;
+  axis.hidden=false;
+  curve.classList.remove('fmge-view');
+  sideStats.hidden=false;
+  sideCumulativeLabel.textContent='total topics so far';
+  sideNewLabel.textContent='topics added in this milestone';
+  sideCta.textContent='Start Milestone 1';
+  sideNote.textContent=`Open NeuroFlip and start with Milestone 1 for ${data.label}.`;
+
+  const max=Math.max(...data.rows.map(r=>Number(r[1])));
+  const halfwayIndex=data.rows.findIndex(r=>r[0]==='50%');
+
+  curve.innerHTML=data.rows.map((r,i)=>{
+    const n=Number(r[1]);
+    const pct=Math.max(8,(n/max)*100);
+    const cls=i===0?'first':i===halfwayIndex?'mid':i===data.rows.length-2?'fourth':i===data.rows.length-1?'last':'';
+    const rowCls=i===halfwayIndex?'bar-col midway':'bar-col';
+    return `<button type="button" class="${rowCls}" aria-label="${data.label} milestone ${i+1}: ${r[0]} of past-question coverage, ${r[1]} topics total"><span class="bar-label"><strong>${r[0]}</strong><span>M${i+1}</span></span><span class="bar-track"><span class="bar ${cls}" style="--pct:${pct}%" data-topics="${r[1]}"><span class="bar-count">${r[1]}</span></span></span></button>`
+  }).join('');
+
+  const bars=[...curve.querySelectorAll('.bar-col')];
+  function setActive(index){
+    const c=data.copy[index];
+    sidePct.textContent=c[0];
+    sideTitle.textContent=c[1];
+    sideCopy.textContent=c[2];
+    const cumulative=data.rows[index][1];
+    const added=data.rows[index][2];
+    sideCumulative.textContent=cumulative;
+    if(index===0){
+      sideCumulativeLabel.textContent='topics to revise';
+      sideNew.textContent=c[0];
+      sideNewLabel.textContent='of past questions covered';
+    }else{
+      sideCumulativeLabel.textContent='total topics so far';
+      sideNew.textContent=`+${added}`;
+      sideNewLabel.textContent='topics added in this milestone';
+    }
+    sideRule.textContent=`Milestone ${index+1} covers ${c[0]} of what past ${data.label} questions have tested.`;
+    bars.forEach((b,j)=>b.setAttribute('aria-pressed',String(index===j)));
+  }
+  bars.forEach((bar,index)=>bar.addEventListener('click',()=>setActive(index)));
+  setActive(0);
+}
+document.querySelectorAll('.terrain-tabs button').forEach(btn=>btn.addEventListener('click',()=>renderExam(btn.dataset.mode)));
+renderExam('NEET_PG');
+
+const nav=document.getElementById('nav'),menu=document.getElementById('menu');
+const syncNav=()=>nav.classList.toggle('scrolled',window.scrollY>12);
+syncNav();
+window.addEventListener('scroll',syncNav,{passive:true});
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close menu':'Open menu')});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open menu')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open menu');menu.focus()}});
+</script>
+</body></html>
