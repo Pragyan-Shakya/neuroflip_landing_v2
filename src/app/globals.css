@@ -1,26 +1,291 @@
 @import "tailwindcss";
 
+/* Desktop-first: the reference uses max-width 980/700/359 queries → use max-lg / max-md / max-sm. */
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 360px;
+  --breakpoint-md: 701px;
+  --breakpoint-lg: 981px;
+
+  --color-purple: #634a72;
+  --color-purple-deep: #4d3959;
+  --color-purple-ink: #2f2734;
+  --color-orange: #eb814e;
+  --color-peach: #f7986a;
+  --color-peach-soft: #ffe2c8;
+  --color-lav: #eedff6;
+  --color-lav-2: #d5c2e3;
+  --color-warm: #fff5eb;
+  --color-ink: #1b1b1b;
+  --color-muted: #625d65;
+  --color-quiet: #787878;
+  --color-line: #d9d9d9;
+
+  --font-sans: var(--font-manrope), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+
+  --text-section: clamp(32px, 3.6vw, 46px);
+  --shadow-hairline: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --gutter: 28px;
+}
+@media (width < 981px) {
+  :root { --gutter: 22px; }
+}
+@media (width < 701px) {
+  :root { --gutter: 20px; }
+}
+@media (width < 360px) {
+  :root { --gutter: 16px; }
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@utility wrap {
+  width: min(calc(100% - 2 * var(--gutter)), 1200px);
+  margin-inline: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: var(--color-purple);
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+    color: var(--color-ink);
+    background: var(--color-purple);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  body, button, a {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  a { text-underline-offset: 0.18em; }
+  :focus-visible {
+    outline: 3px solid var(--color-peach-soft);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: #ffe2c8;
+    color: #2f2734;
+  }
+  section[id] { scroll-margin-top: 88px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Decorations driven by pseudo-elements or DOM state that utilities can't express cleanly.
+   Unlayered on purpose: state rules (open nav, open FAQ) must override utilities, as in the reference. */
+.kicker::before {
+  content: "";
+  width: 25px;
+  height: 3px;
+  background: var(--color-orange);
+  border-radius: 3px;
+}
+
+/* How-it-works pipeline arrows */
+.pyt-stage:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  z-index: 3;
+  right: -25px;
+  top: 50%;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  background: var(--color-purple);
+  color: white;
+  border: 4px solid #6a507d;
+  font-size: 14px;
+  font-weight: 700;
+}
+@media (width < 981px) {
+  .pyt-stage:not(:last-child)::after {
+    content: "↓";
+    right: 24px;
+    top: auto;
+    bottom: -25px;
+    transform: none;
+  }
+}
+.milestone-summary > strong + strong::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin: 0 10px 2px 0;
+  border-radius: 50%;
+  background: #c9b9d2;
+}
+@media (width < 701px) {
+  .milestone-summary > strong + strong::before { margin-right: 7px; }
+}
+
+/* Milestone bars */
+.bar-col::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 4px;
+  border-radius: 999px;
+  background: transparent;
+  transition: background-color 0.18s ease;
+}
+.bar-col[aria-pressed="true"]::before {
+  background: linear-gradient(180deg, #eb814e, #c672e1);
+}
+.bar-col.midway::after {
+  content: "Midway";
+  position: absolute;
+  right: 18px;
+  top: 7px;
+  z-index: 3;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #b95b32;
+  background: #fff1e8;
+  border: 1px solid #f3c7af;
+  border-radius: 999px;
+  padding: 4px 7px;
+  pointer-events: none;
+}
+@media (width < 701px) {
+  .bar-col.midway::after { display: none; }
+}
+.bar {
+  background: linear-gradient(90deg, #ede4f4 0%, #d9c5e9 100%);
+  border: 1px solid #d6c5e3;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.48);
+}
+.bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+.bar.first {
+  background: linear-gradient(90deg, #f7dcc8 0%, #f1c5a4 100%);
+  border-color: #f0b69a;
+}
+.bar.mid {
+  background: linear-gradient(90deg, #f9b58d 0%, #f08a58 100%);
+  border-color: #e97a49;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+.bar.fourth {
+  background: linear-gradient(90deg, #e2d2ef 0%, #d1bce5 100%);
+  border-color: var(--color-lav-2);
+}
+.bar.last {
+  background: linear-gradient(90deg, #ddf3e5 0%, #c9e9d6 100%);
+  border-color: #bee5cb;
+}
+
+/* "Use NeuroFlip if" bullet dots cycle through four colours */
+.pain-card::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-orange);
+  box-shadow: 0 0 0 6px rgba(235, 129, 78, 0.08);
+}
+.pain-card:nth-child(4n + 2)::before {
+  background: #d9c5e9;
+  box-shadow: 0 0 0 6px rgba(217, 197, 233, 0.1);
+}
+.pain-card:nth-child(4n + 3)::before {
+  background: #c9e9d6;
+  box-shadow: 0 0 0 6px rgba(201, 233, 214, 0.1);
+}
+.pain-card:nth-child(4n + 4)::before {
+  background: #ffd8c4;
+  box-shadow: 0 0 0 6px rgba(255, 216, 196, 0.1);
+}
+
+.proof-dot::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-orange);
+}
+
+/* FAQ disclosure marker */
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  color: #ffd8c4;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 500;
+}
+.faq-item[open] summary::after { content: "−"; }
+.faq-item[open] summary { padding-bottom: 12px; }
+.faq-item summary:focus-visible {
+  outline: 3px solid #ffe2c8;
+  outline-offset: -3px;
+}
+@media (width < 701px) {
+  .faq-item summary::after { right: 16px; }
+}
+
+/* Mobile nav panel */
+@media (width < 981px) {
+  .nav.open .nav-links {
+    display: flex;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: var(--color-purple);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 12px var(--gutter) 18px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .nav.open .nav-links a { padding: 12px 0; }
+  .nav.open .nav-links .nav-action { margin-top: 8px; }
+}
+@media (width < 701px) {
+  .nav.open .nav-links { top: 70px; }
 }
