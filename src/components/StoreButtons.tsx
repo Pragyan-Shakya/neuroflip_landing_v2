@@ -1,4 +1,4 @@
-export const APP_STORE_URL = "https://apps.apple.com/in/app/neuroflip-neet-pg-flashcards/id6474674721";
+export const APP_STORE_URL = "https://apps.apple.com/us/app/neuroflip-neet-pg-flashcards/id6474674721";
 export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.neuroflip.neetpg";
 
 function AppleIcon() {
