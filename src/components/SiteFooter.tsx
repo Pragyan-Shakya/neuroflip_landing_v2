@@ -1,10 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const LINKS = [
-  { href: "#milestones", label: "Milestones" },
-  { href: "#for-you", label: "Why NeuroFlip" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#faqs", label: "FAQs" },
+  { href: "/#milestones", label: "Milestones" },
+  { href: "/#for-you", label: "Why NeuroFlip" },
+  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/#faqs", label: "FAQs" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-of-use", label: "Terms of Use" },
 ];
 
 export function SiteFooter() {
@@ -17,9 +20,9 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-wrap gap-5 text-[12px] text-white/78">
           {LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="no-underline">
+            <Link key={l.href} href={l.href} className="no-underline">
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="max-w-[520px] text-right text-[11px] leading-[1.55] text-white/74 max-md:text-left">

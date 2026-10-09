@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const LINKS = [
-  { href: "#milestones", label: "Milestones" },
-  { href: "#for-you", label: "Why NeuroFlip" },
-  { href: "#testimonials", label: "Testimonials" },
+  { href: "/#milestones", label: "Milestones" },
+  { href: "/#for-you", label: "Why NeuroFlip" },
+  { href: "/#testimonials", label: "Testimonials" },
 ];
 
 export function SiteNav() {
@@ -34,31 +35,31 @@ export function SiteNav() {
       id="nav"
     >
       <div className="wrap flex h-[76px] items-center justify-between gap-7 max-md:h-[70px]">
-        <a
-          href="#top"
+        <Link
+          href="/#top"
           className="flex items-center gap-[11px] text-[18px] font-bold tracking-[-.03em] text-white no-underline"
           aria-label="Neuroflip home"
         >
           <Image src="/brand/logo.svg" width={28} height={36} alt="" priority className="h-9 w-7 object-contain" />
           <span translate="no">Neuroflip</span>
-        </a>
+        </Link>
         <nav
           className="nav-links flex items-center gap-7 text-[14px] font-bold text-white/86 max-lg:hidden"
           id="navLinks"
           aria-label="Primary navigation"
         >
           {LINKS.map((l) => (
-            <a key={l.href} href={l.href} className={link} onClick={close}>
+            <Link key={l.href} href={l.href} className={link} onClick={close}>
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#download"
+          <Link
+            href="/#download"
             className={`nav-action ${link} inline-flex min-h-11 items-center justify-center rounded-[44px] bg-orange px-[18px] font-bold text-purple-ink!`}
             onClick={close}
           >
             Download NeuroFlip
-          </a>
+          </Link>
         </nav>
         <button
           ref={menuRef}
