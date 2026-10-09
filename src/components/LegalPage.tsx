@@ -2,6 +2,7 @@ import type { LegalSection } from "@/content/legal";
 import { COMPANY_NAME } from "@/lib/site";
 import { SiteFooter } from "./SiteFooter";
 import { SiteNav } from "./SiteNav";
+import { SkipLink } from "./SkipLink";
 
 const slug = (s: string) =>
   s
@@ -9,12 +10,25 @@ const slug = (s: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
+/** Unique, non-empty anchor id per section (prefixed so it can't clash with page-level ids like "main"). */
+function sectionIds(sections: readonly LegalSection[]) {
+  const seen = new Map<string, number>();
+  return sections.map((s) => {
+    const base = `section-${slug(s.heading) || "untitled"}`;
+    const n = (seen.get(base) ?? 0) + 1;
+    seen.set(base, n);
+    return n === 1 ? base : `${base}-${n}`;
+  });
+}
+
 /** Headings in the source copy are ALL CAPS; show them in sentence case without altering the text. */
 const headingCase = "lowercase first-letter:uppercase";
 
 export function LegalPage({ title, sections }: { title: string; sections: readonly LegalSection[] }) {
+  const ids = sectionIds(sections);
   return (
     <>
+      <SkipLink />
       <SiteNav />
       <main id="main">
         <header className="wrap pt-16 pb-12 text-center text-white max-md:pt-11 max-md:pb-9">
@@ -29,12 +43,12 @@ export function LegalPage({ title, sections }: { title: string; sections: readon
 
         <div className="wrap grid grid-cols-[220px_minmax(0,1fr)] items-start gap-8 pb-16 max-lg:grid-cols-1 max-md:pb-10">
           <nav className="sticky top-[100px] max-lg:hidden" aria-label="On this page">
-            <div className="mb-3 text-[11px] font-bold tracking-[.08em] text-white/60 uppercase">On this page</div>
-            <ol className="m-0 flex list-none flex-col gap-2 p-0 text-[13px] leading-[1.4]">
-              {sections.map((s) => (
-                <li key={s.heading}>
+            <div className="mb-3 text-[11px] font-bold tracking-[.08em] text-white/80 uppercase">On this page</div>
+            <ol role="list" className="m-0 flex list-none flex-col gap-2 p-0 text-[13px] leading-[1.4]">
+              {sections.map((s, i) => (
+                <li key={ids[i]}>
                   <a
-                    href={`#${slug(s.heading)}`}
+                    href={`#${ids[i]}`}
                     className={`block text-white/78 no-underline transition-colors duration-[180ms] hover:text-white ${headingCase}`}
                   >
                     {s.heading}
@@ -47,8 +61,8 @@ export function LegalPage({ title, sections }: { title: string; sections: readon
           <article className="mx-auto w-full max-w-[820px] rounded-2xl border border-[#E7D8CC] bg-warm px-11 py-10 text-[#4A4350] shadow-hairline max-md:px-5 max-md:py-7">
             {sections.map((s, i) => (
               <section
-                key={s.heading}
-                id={slug(s.heading)}
+                key={ids[i]}
+                id={ids[i]}
                 className={i === 0 ? "" : "mt-8 border-t border-[#EAD9CC] pt-8 max-md:mt-6 max-md:pt-6"}
               >
                 <h2 className={`m-0 mb-3 text-[20px] leading-[1.3] font-bold tracking-[-.015em] text-purple-ink ${headingCase}`}>
@@ -66,7 +80,7 @@ export function LegalPage({ title, sections }: { title: string; sections: readon
                     >
                       {p.address.map((line) =>
                         line.includes("@") ? (
-                          <a key={line} href={`mailto:${line}`} className="block font-bold text-[#A94E24]">
+                          <a key={line} href={`mailto:${line}`} className="block font-bold text-[#A94E24] underline underline-offset-2">
                             {line}
                           </a>
                         ) : (
