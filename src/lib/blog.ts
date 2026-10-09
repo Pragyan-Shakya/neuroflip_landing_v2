@@ -19,6 +19,8 @@ export type PostMeta = {
   cover: string;
   coverAlt: string;
   draft: boolean;
+  /** Shown as the hero card on /blog (newest featured post wins). */
+  featured: boolean;
   readingMinutes: number;
 };
 
@@ -52,7 +54,9 @@ function parse(file: string): Post {
   const { data, content } = matter(fs.readFileSync(path.join(POSTS_DIR, file), "utf8"));
   const category = requireString(data, file, "category");
   if (!isCategory(category)) fail(file, "category", `"${category}" is not in src/content/categories.ts`);
-  if (data.draft !== undefined && typeof data.draft !== "boolean") fail(file, "draft", "must be true or false");
+  for (const flag of ["draft", "featured"]) {
+    if (data[flag] !== undefined && typeof data[flag] !== "boolean") fail(file, flag, "must be true or false");
+  }
   return {
     slug: file.replace(/\.mdx$/, ""),
     title: requireString(data, file, "title"),
@@ -64,6 +68,7 @@ function parse(file: string): Post {
     cover: requireString(data, file, "cover"),
     coverAlt: requireString(data, file, "coverAlt"),
     draft: data.draft === true,
+    featured: data.featured === true,
     readingMinutes: readingTime(content),
     body: content,
   };
@@ -91,6 +96,11 @@ export function getAllPosts(): PostMeta[] {
 
 export function getPost(slug: string): Post | null {
   return loadPosts().find((p) => p.slug === slug) ?? null;
+}
+
+/** Newest post marked `featured: true`, if any. */
+export function getFeaturedPost(): PostMeta | null {
+  return getAllPosts().find((p) => p.featured) ?? null;
 }
 
 export function getPostsByCategory(category: CategorySlug): PostMeta[] {

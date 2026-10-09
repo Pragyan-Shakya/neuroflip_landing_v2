@@ -21,6 +21,8 @@ export function PostGrid({ children }: { children: React.ReactNode }) {
     firstNew.current = null;
   }, [visible]);
 
+  if (items.length === 0) return null;
+
   const loadMore = () => {
     firstNew.current = visible;
     setVisible((v) => v + PAGE_SIZE);

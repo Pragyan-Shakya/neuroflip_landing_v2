@@ -38,6 +38,7 @@ author: "Priya Sharma"         # required; plain name
 cover: "/blog/<slug>/cover.jpg"  # required
 coverAlt: "…"                  # required
 draft: true                    # optional; default false
+featured: true                 # optional; newest featured post is the hero card on /blog
 ---
 ```
 
@@ -86,7 +87,8 @@ All statically generated (`generateStaticParams`, `dynamicParams = false`).
 Shared shell: `SkipLink` → `SiteNav` → `<main id="main">` → `SiteFooter`, purple page background, existing tokens only.
 
 ### Index / category pages
-- Header (centred, white): `kicker` "Blog", Fraunces `<h1>` (index: "Revise smarter for Medical PG"; category: category name), one-line lead (white/72).
+- Header (centred, white): `kicker` "Blog", Fraunces `<h1>` (index: "Blog" with no kicker or lead; category: kicker "Blog" + category name + description), one-line lead (white/72).
+- `FeaturedPost` (index only, if any post has `featured: true`): hero card above the chips — cover left, text right (stacks ≤700px), "Featured" orange pill + category, Fraunces title, 3-line excerpt, meta. Excluded from the grid below.
 - `CategoryChips`: row of rounded pills linking to `/blog` ("All") and each category page; active = peach bg / purple-ink text, others = `bg-white/10` white text.
 - `PostGrid`: 3 cols; 2 at `max-lg`; 1 at `max-md`.
 - `PostCard`: `bg-warm` rounded-2xl, `shadow-hairline`, 16:9 cover, category label (small, uppercase, orange), bold title (purple-ink), 2-line clamped excerpt (muted), meta "Author · date · N min read" (quiet, 13px). Whole card is one link; subtle translate-y lift on hover (disabled under reduced motion).

@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { BlogHeader } from "@/components/blog/BlogHeader";
 import { BlogShell } from "@/components/blog/BlogShell";
 import { CategoryChips } from "@/components/blog/CategoryChips";
+import { FeaturedPost } from "@/components/blog/FeaturedPost";
 import { JsonLd } from "@/components/blog/JsonLd";
 import { PostCard } from "@/components/blog/PostCard";
 import { PostGrid } from "@/components/blog/PostGrid";
-import { getActiveCategories, getAllPosts } from "@/lib/blog";
+import { getActiveCategories, getAllPosts, getFeaturedPost } from "@/lib/blog";
 import { BLOG_DESCRIPTION, BLOG_NAME, ORG_ID, SITE_URL, pageMetadata } from "@/lib/site";
 
 const base = pageMetadata("/blog", "Blog | Neuroflip", BLOG_DESCRIPTION);
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
 
 export default function BlogIndexPage() {
   const posts = getAllPosts();
+  const featured = getFeaturedPost();
+  const rest = posts.filter((p) => p.slug !== featured?.slug);
   return (
     <BlogShell>
       <JsonLd
@@ -36,16 +39,17 @@ export default function BlogIndexPage() {
           })),
         }}
       />
-      <BlogHeader kicker="Blog" title="Revise smarter for Medical PG" lead={BLOG_DESCRIPTION} />
+      <BlogHeader title="Blog" />
+      {featured && <FeaturedPost post={featured} />}
       <CategoryChips categories={getActiveCategories()} />
-      {posts.length > 0 ? (
+      {posts.length === 0 ? (
+        <p className="wrap m-0 pb-20 text-center text-[16px] text-white/80">Posts coming soon.</p>
+      ) : (
         <PostGrid>
-          {posts.map((p) => (
+          {rest.map((p) => (
             <PostCard key={p.slug} post={p} />
           ))}
         </PostGrid>
-      ) : (
-        <p className="wrap m-0 pb-20 text-center text-[16px] text-white/80">Posts coming soon.</p>
       )}
     </BlogShell>
   );
