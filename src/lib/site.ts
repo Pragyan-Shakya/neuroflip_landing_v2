@@ -25,3 +25,8 @@ export function pageMetadata(path: string, title: string, description: string): 
     twitter: { card: "summary_large_image", title, description, images: ["/twitter-image"] },
   };
 }
+
+export const ORG_ID = `${SITE_URL}/#organization`;
+export const BLOG_NAME = "Neuroflip Blog";
+export const BLOG_DESCRIPTION =
+  "Medical PG revision strategy and study tips for NEET-PG, INI-CET and FMGE, from the Neuroflip team.";

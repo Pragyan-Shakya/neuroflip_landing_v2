@@ -19,7 +19,7 @@ Add a simple, SEO-friendly blog to the Neuroflip landing site, authored as MDX f
 | Pagination | Client "Load more": 9 initially, +9 per click |
 | Related posts | Up to 3 newest in same category, topped up with newest overall |
 | Share | X, LinkedIn, Facebook, WhatsApp, copy link (plain share URLs, no 3rd-party scripts) |
-| Links to blog | "Blog" link in both `SiteNav` and `SiteFooter` |
+| Links to blog | "Blog" link in `SiteNav`; footer keeps only page links (Blog, Privacy Policy, Terms of Use) |
 | Seed content | 3 sample posts, 2 categories, `draft: true` |
 | Design | Simple; reuse landing tokens and `LegalPage` layout pattern |
 
@@ -86,7 +86,7 @@ All statically generated (`generateStaticParams`, `dynamicParams = false`).
 Shared shell: `SkipLink` → `SiteNav` → `<main id="main">` → `SiteFooter`, purple page background, existing tokens only.
 
 ### Index / category pages
-- Header (centred, white): `kicker` "Blog", Fraunces `<h1>` (index: "Blog"; category: category name), one-line lead (white/72).
+- Header (centred, white): `kicker` "Blog", Fraunces `<h1>` (index: "Revise smarter for Medical PG"; category: category name), one-line lead (white/72).
 - `CategoryChips`: row of rounded pills linking to `/blog` ("All") and each category page; active = peach bg / purple-ink text, others = `bg-white/10` white text.
 - `PostGrid`: 3 cols; 2 at `max-lg`; 1 at `max-md`.
 - `PostCard`: `bg-warm` rounded-2xl, `shadow-hairline`, 16:9 cover, category label (small, uppercase, orange), bold title (purple-ink), 2-line clamped excerpt (muted), meta "Author · date · N min read" (quiet, 13px). Whole card is one link; subtle translate-y lift on hover (disabled under reduced motion).
@@ -98,10 +98,11 @@ Shared shell: `SkipLink` → `SiteNav` → `<main id="main">` → `SiteFooter`, 
 - Cover: rounded-2xl, max-w 820px, centred.
 - Body: `bg-warm` article card (max-w 820px, same padding as `LegalPage`), MDX rendered with `.prose-blog` (unlayered, in `globals.css`): h2/h3, p, ul/ol, links (orange underline), blockquote (lavender left bar), img (rounded), code, hr.
 - `ShareButtons` at bottom of card: X, LinkedIn, Facebook, WhatsApp (open in new tab with `rel="noopener noreferrer"`), copy link (shows "Copied" for 2s, `aria-live`).
-- "More from the blog": up to 3 `PostCard`s.
+- "More from the blog": up to 3 `PostCard`s in the same 820px column as the article (3 cols; 2 at ≤980 with the third hidden; 1 at ≤700).
+- "← Back to blog" outline pill button at the bottom of the page.
 
 ### Nav / footer
-- Add "Blog" (`/blog`) to `SiteNav` (desktop + mobile menu) and `SiteFooter`. Note: deliberate deviation from the reference nav.
+- Add "Blog" (`/blog`) to `SiteNav` (desktop + mobile menu). Footer drops the in-page `/#section` links, keeping only Blog, Privacy Policy, Terms of Use. Both are deliberate deviations from the reference.
 
 ## Components
 

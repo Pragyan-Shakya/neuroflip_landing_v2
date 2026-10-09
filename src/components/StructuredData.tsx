@@ -1,8 +1,6 @@
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import { ORG_ID, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import { FAQS } from "./Faq";
 import { APP_STORE_URL, PLAY_STORE_URL } from "./StoreButtons";
-
-const ORG_ID = `${SITE_URL}/#organization`;
 
 const graph = {
   "@context": "https://schema.org",

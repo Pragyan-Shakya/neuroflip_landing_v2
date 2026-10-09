@@ -2,10 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const LINKS = [
-  { href: "/#milestones", label: "Milestones" },
-  { href: "/#for-you", label: "Why NeuroFlip" },
-  { href: "/#testimonials", label: "Testimonials" },
-  { href: "/#faqs", label: "FAQs" },
+  { href: "/blog", label: "Blog" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms-of-use", label: "Terms of Use" },
 ];

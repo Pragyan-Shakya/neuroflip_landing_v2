@@ -8,6 +8,7 @@ const LINKS = [
   { href: "/#milestones", label: "Milestones" },
   { href: "/#for-you", label: "Why NeuroFlip" },
   { href: "/#testimonials", label: "Testimonials" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export function SiteNav() {
