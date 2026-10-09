@@ -276,18 +276,64 @@
     top: 76px;
     left: 0;
     right: 0;
-    background: var(--color-purple);
+    background: var(--color-purple-deep);
     border-top: 1px solid rgba(255, 255, 255, 0.14);
-    padding: 12px var(--gutter) 18px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 18px 40px rgba(20, 12, 26, 0.35);
+    padding: 8px var(--gutter) 20px;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
+    font-size: 16px;
+    transition: opacity 200ms ease, transform 200ms ease;
+    @starting-style {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
   }
-  .nav.open .nav-links a { padding: 12px 0; }
-  .nav.open .nav-links .nav-action { margin-top: 8px; }
+  .nav.open .nav-links a:not(.nav-action) {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 10px;
+    margin: 0 -10px;
+    background: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)) center bottom / calc(100% - 20px) 1px no-repeat;
+  }
+  .nav.open .nav-links a:not(.nav-action):active {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+  }
+  @media (hover: hover) {
+    .nav.open .nav-links a:not(.nav-action):hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+    }
+  }
+  .nav.open .nav-links .nav-action { margin-top: 16px; min-height: 50px; }
+  .nav-scrim {
+    position: fixed;
+    inset: 76px 0 0;
+    z-index: -1;
+    background: rgba(20, 12, 26, 0.45);
+    transition: opacity 200ms ease;
+    @starting-style { opacity: 0; }
+  }
 }
 @media (width < 701px) {
   .nav.open .nav-links { top: 70px; }
+  .nav-scrim { inset: 70px 0 0; }
+}
+.menu-icon path {
+  transform-origin: 12px 12px;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+.nav.open .menu-icon path:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+.nav.open .menu-icon path:nth-child(2) { opacity: 0; }
+.nav.open .menu-icon path:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+@media (prefers-reduced-motion: reduce) {
+  .nav.open .nav-links,
+  .nav-scrim,
+  .menu-icon path { transition: none; }
 }
 
 /* Blog post body (MDX). Unlayered so element styles beat Tailwind's preflight resets. */

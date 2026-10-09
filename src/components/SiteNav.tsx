@@ -13,25 +13,60 @@ const LINKS = [
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLButtonElement>(null);
+  const linksRef = useRef<HTMLElement>(null);
+  const openedByKeyboard = useRef(false);
 
   useEffect(() => {
     if (!open) return;
+    const root = document.documentElement;
+    const prev = { overflow: root.style.overflow, gutter: root.style.scrollbarGutter };
+    root.style.scrollbarGutter = "stable";
+    root.style.overflow = "hidden";
+    if (openedByKeyboard.current) linksRef.current?.querySelector("a")?.focus();
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpen(false);
         menuRef.current?.focus();
+        return;
+      }
+      if (e.key !== "Tab" || !headerRef.current) return;
+      const items = [...headerRef.current.querySelectorAll<HTMLElement>("a[href], button")];
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
       }
     };
+    const desktop = window.matchMedia("(width >= 981px)");
+    const onResize = () => desktop.matches && setOpen(false);
+
     document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+    desktop.addEventListener("change", onResize);
+    return () => {
+      root.style.overflow = prev.overflow;
+      root.style.scrollbarGutter = prev.gutter;
+      document.removeEventListener("keydown", onKey);
+      desktop.removeEventListener("change", onResize);
+    };
   }, [open]);
 
   const close = () => setOpen(false);
+  const dismiss = () => {
+    setOpen(false);
+    menuRef.current?.focus();
+  };
   const link = "no-underline transition-colors duration-[180ms] ease-[ease] hover:text-white";
 
   return (
     <header
+      ref={headerRef}
       className={`nav sticky top-0 z-30 bg-purple transition-[background-color,box-shadow] duration-[220ms] ease-[ease]${open ? " open" : ""}`}
       id="nav"
     >
@@ -45,6 +80,7 @@ export function SiteNav() {
           <span translate="no">Neuroflip</span>
         </Link>
         <nav
+          ref={linksRef}
           className="nav-links flex items-center gap-7 text-[14px] font-bold text-white/86 max-lg:hidden"
           id="navLinks"
           aria-label="Primary navigation"
@@ -69,13 +105,19 @@ export function SiteNav() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="navLinks"
-          onClick={() => setOpen((o) => !o)}
+          onClick={(e) => {
+            openedByKeyboard.current = e.detail === 0;
+            setOpen((o) => !o);
+          }}
         >
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="size-5">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="menu-icon size-5">
+            <path d="M4 7h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M4 12h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </button>
       </div>
+      {open && <div className="nav-scrim" aria-hidden="true" onClick={dismiss} />}
     </header>
   );
 }
