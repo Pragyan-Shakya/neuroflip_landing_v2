@@ -6,6 +6,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { Milestones } from "@/components/Milestones";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
+import { StructuredData } from "@/components/StructuredData";
 import { Testimonials } from "@/components/Testimonials";
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
         <Faq />
       </main>
       <SiteFooter />
+      <StructuredData />
     </>
   );
 }

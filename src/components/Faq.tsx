@@ -1,4 +1,4 @@
-const FAQS = [
+export const FAQS = [
   {
     q: "What is a PYT?",
     a: "PYT means Previous Year Topic. It is a topic connected to past exam questions. NeuroFlip uses that past-question history to help decide what you should revise first.",

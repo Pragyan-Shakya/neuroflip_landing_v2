@@ -23,6 +23,7 @@ A single-page Next.js 15 (App Router, TypeScript, Tailwind v4) port of `referenc
 
 - `src/app/page.tsx` composes the sections in reference order: skip link → `SiteNav` → `<main>` (Hero, HowItWorks, Milestones, ForYou, Testimonials, Download, Faq) → `SiteFooter`. Keep every id/anchor (`#top`, `#how-pyts`, `#milestones`, `#for-you`, `#testimonials`, `#download`, `#faqs`), aria attribute and piece of copy identical to the reference.
 - Client components only where there is interactivity: `SiteNav` (mobile menu, Escape to close), `HeroExamRotator` (cycles exam names twice, static under reduced motion), `MilestoneExplorer` (exam tabs + milestone bars + side panel), `Avatar` (falls back to initials if the image fails to load). Everything else is a Server Component.
+- SEO: site constants (domain `https://neuroflip.com`, title, description) live in `src/lib/site.ts` and feed `layout.tsx` metadata (canonical, Open Graph, Twitter), `robots.ts`, `sitemap.ts` and `opengraph-image.tsx` (`twitter-image.tsx` reuses it). `StructuredData.tsx` emits JSON-LD: Organization, WebSite, MobileApplication and FAQPage. The FAQPage entries are built from the same `FAQS` array as the visible FAQ, so they can't drift.
 - `src/lib/exam-data.ts` holds `EXAM_DATA`, copied verbatim from the reference script. Rows are `[coverage %, total topics, topics added]`.
 - Styling lives in `src/app/globals.css`:
   - `@theme` defines the colour tokens, fonts (`--font-manrope`/`--font-fraunces` from `next/font`), `text-section`, `shadow-hairline`, and **custom breakpoints**.
