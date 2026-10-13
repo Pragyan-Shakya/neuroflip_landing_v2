@@ -6,4 +6,4 @@ public/__ref.html
 Dockerfile
 .dockerignore
 *.md
-.env*
+.env*.local

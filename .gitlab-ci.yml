@@ -1,0 +1,28 @@
+# Runs only on pushes to agent-ai, on the production server's shell runner (needs Docker access).
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "agent-ai"
+
+stages:
+  - build
+  - deploy
+
+variables:
+  DOCKER_BUILDKIT: "1"
+  IMAGE: prod_frontend:react
+  SERVICE: nf_neuroflip-landing
+
+build:
+  stage: build
+  resource_group: production
+  script:
+    # The runner's checkout has no .env, so set NEXT_PUBLIC_BLOG_ENABLED=false in Settings → CI/CD → Variables to hide the blog.
+    - docker build --build-arg NEXT_PUBLIC_BLOG_ENABLED="${NEXT_PUBLIC_BLOG_ENABLED:-}" -t "$IMAGE" .
+
+deploy:
+  stage: deploy
+  resource_group: production
+  script:
+    # The tag doesn't change, so --force is what makes Swarm recreate the tasks on the new image.
+    # The image only exists locally, so skip the registry digest lookup.
+    - docker service update --force --no-resolve-image --image "$IMAGE" "$SERVICE"
