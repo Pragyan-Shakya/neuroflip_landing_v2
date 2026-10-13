@@ -27,6 +27,8 @@ export function pageMetadata(path: string, title: string, description: string): 
 }
 
 export const ORG_ID = `${SITE_URL}/#organization`;
+/** Build-time switch: set NEXT_PUBLIC_BLOG_ENABLED=false to 404 every /blog route and drop the blog links. */
+export const BLOG_ENABLED = process.env.NEXT_PUBLIC_BLOG_ENABLED !== "false";
 export const BLOG_NAME = "Neuroflip Blog";
 export const BLOG_DESCRIPTION =
   "Medical PG revision strategy and study tips for NEET-PG, INI-CET and FMGE, from the Neuroflip team.";

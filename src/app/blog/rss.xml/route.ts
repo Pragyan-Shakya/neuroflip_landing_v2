@@ -1,6 +1,6 @@
 import { CATEGORIES } from "@/content/categories";
 import { getAllPosts, lastModified } from "@/lib/blog";
-import { BLOG_DESCRIPTION, BLOG_NAME, SITE_URL } from "@/lib/site";
+import { BLOG_DESCRIPTION, BLOG_ENABLED, BLOG_NAME, SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -10,6 +10,7 @@ const esc = (s: string) =>
 const rfc822 = (iso: string) => new Date(`${iso}T00:00:00Z`).toUTCString();
 
 export function GET() {
+  if (!BLOG_ENABLED) return new Response("Not Found", { status: 404 });
   const posts = getAllPosts();
   const items = posts.map((p) => {
     const url = `${SITE_URL}/blog/${p.slug}`;

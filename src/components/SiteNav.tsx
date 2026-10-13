@@ -3,12 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { BLOG_ENABLED } from "@/lib/site";
 
 const LINKS = [
   { href: "/#milestones", label: "Milestones" },
   { href: "/#for-you", label: "Why NeuroFlip" },
   { href: "/#testimonials", label: "Testimonials" },
-  { href: "/blog", label: "Blog" },
+  ...(BLOG_ENABLED ? [{ href: "/blog", label: "Blog" }] : []),
 ];
 
 export function SiteNav() {

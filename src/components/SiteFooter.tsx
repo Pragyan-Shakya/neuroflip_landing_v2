@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BLOG_ENABLED } from "@/lib/site";
 
 const LINKS = [
-  { href: "/blog", label: "Blog" },
+  ...(BLOG_ENABLED ? [{ href: "/blog", label: "Blog" }] : []),
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms-of-use", label: "Terms of Use" },
 ];

@@ -27,6 +27,7 @@ A single-page Next.js 15 (App Router, TypeScript, Tailwind v4) port of `referenc
 - Legal pages: `/privacy-policy` and `/terms-of-use` render `src/content/legal.ts` through `LegalPage.tsx`.
   - The copy is the client's existing wording from neuroflip.com, kept verbatim. Only factual errors were fixed: company name Neuroflip Private Limited, the Pollachi address, info@neuroflip.com, and India instead of Nepal.
   - Don't rewrite the copy without being asked. Source headings are ALL CAPS and are displayed in sentence case via CSS.
+- Blog kill switch: `NEXT_PUBLIC_BLOG_ENABLED=false` at **build time** (`BLOG_ENABLED` in `src/lib/site.ts`) 404s every `/blog` route and the RSS feed, and drops the blog from the nav, footer and sitemap. Docker: `--build-arg NEXT_PUBLIC_BLOG_ENABLED=false`.
 - Nav and footer links use `next/link` with `/#section` hrefs so they work from the legal pages too.
 - `src/lib/exam-data.ts` holds `EXAM_DATA`, copied verbatim from the reference script. Rows are `[coverage %, total topics, topics added]`.
 - Styling lives in `src/app/globals.css`:

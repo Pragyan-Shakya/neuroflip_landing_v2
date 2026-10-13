@@ -3,6 +3,7 @@ import path from "node:path";
 import { cache } from "react";
 import matter from "gray-matter";
 import { CATEGORIES, isCategory, type CategorySlug } from "@/content/categories";
+import { BLOG_ENABLED } from "@/lib/site";
 
 const POSTS_DIR = path.join(process.cwd(), "src/content/blog");
 const WORDS_PER_MINUTE = 200;
@@ -77,7 +78,7 @@ function parse(file: string): Post {
 const showDrafts = process.env.NODE_ENV !== "production";
 
 const loadPosts = cache((): Post[] => {
-  if (!fs.existsSync(POSTS_DIR)) return [];
+  if (!BLOG_ENABLED || !fs.existsSync(POSTS_DIR)) return [];
   return fs
     .readdirSync(POSTS_DIR)
     .filter((f) => f.endsWith(".mdx"))

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { BlogHeader } from "@/components/blog/BlogHeader";
 import { BlogShell } from "@/components/blog/BlogShell";
 import { CategoryChips } from "@/components/blog/CategoryChips";
@@ -7,7 +8,7 @@ import { JsonLd } from "@/components/blog/JsonLd";
 import { PostCard } from "@/components/blog/PostCard";
 import { PostGrid } from "@/components/blog/PostGrid";
 import { getActiveCategories, getAllPosts, getFeaturedPost } from "@/lib/blog";
-import { BLOG_DESCRIPTION, BLOG_NAME, ORG_ID, SITE_URL, pageMetadata } from "@/lib/site";
+import { BLOG_DESCRIPTION, BLOG_ENABLED, BLOG_NAME, ORG_ID, SITE_URL, pageMetadata } from "@/lib/site";
 
 const base = pageMetadata("/blog", "Blog | Neuroflip", BLOG_DESCRIPTION);
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogIndexPage() {
+  if (!BLOG_ENABLED) notFound();
   const posts = getAllPosts();
   const featured = getFeaturedPost();
   const rest = posts.filter((p) => p.slug !== featured?.slug);
